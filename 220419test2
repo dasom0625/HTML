@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html>
+	<head>
+		<meta charset="udf-8">
+			<title>속성</title>
+			<style>
+			p{
+			font-size : 20px;
+			background-color : pink;
+			}
+			a{
+			font-size : 25px;
+			background-color : blue;
+			color : white;
+			margin-right : 20px
+			}
+
+			img {
+			width : 200px;
+			height : 180px;
+			border : 3px solid red;
+			}
+			</style>
+
+
+</head>
+
+	<body>
+		<h1>속성 : </h1>
+		<h2>속성은 태그의 부가 정보를 나타냄</h2>
+		<h3>여는 태그에서 속성이름 = 값 의 형태로 기술한다. </h3>
+		
+		<p>
+		&lt;a> : 하이퍼링크 태그 => 페이지 이동을 수행한다.<br>
+		&lt;a href ="사이트 주소"> 
+		</p>
+
+		<a href = "http://www.naver.com"> 네이버 </a>
+		<a href = "http://www.daum.net"> 다음 </a>
+		<a href = "http://www.w3schools.com"> w3schools </a>
+
+		<p>
+		&lt;img> 이미지를 표현<br>
+		&lt;img src= "이미지 이름" alt = "이미지가 표현되지 않을 때 대체 문자">
+		alt : 이미지가 표현되지 않을 때 대체 문자 (이미지가 정확히 표현되면 실행되지 않음)
+		&lt;img는 열리는 곳과 닫히는 곳 사이에 아무것도 쓰지 않음(왜? img src에서 표현하니까)
+		</p>
+
+		<img src = "../images/라떼.JPG" alt="라떼.JPG">
+		<!--주석-->
+	
+
+	</body>
+</html>
