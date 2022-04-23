@@ -1,0 +1,166 @@
+	1. CSS (Cascading Style Sheets)란? 
+		a. HTML, XHTML, XML같은문서의 스타일을꾸밀 때 사용하는 스타일 시트 언어.
+		b. HTML로 문서의 뼈대를 만들면, CSS는 이 문서를 화장하는 역할
+		(글꼴이나 배경색, 너비와 높이, 위치등을지정하거나, 웹 브라우저 스크린 크기, 장치에 따라서화면을 다르게 표현)
+	2. HTML작성법 
+	<태그 속성 = "속성값">내용</태그>
+	3. CSS 작성법
+	선택자 {
+		속성 : 속성값;
+		속성 : 속성값;
+		}
+	4. ID와 CLASS
+	• ID ( 표기법 : #이름)
+	: 스타일을 지정할 떄 한가지만 지정해서 쓴느 이름
+	하나의 의 문서에 고유한 id 하나만 쓸 수 있음.
+	• CLASS (표기법 : .이름)
+	: 그룹으로 묶어서 스타일을 지정할 때 쓰는 이름
+	5. DIV와 SPAN => 주로 ID나 CLASS와 함께 사용
+	• SPAN : 문자열을 원하는 부분만 선택해서 시각적인 효과를 줌
+		=>줄바꿈이 되지않고 옆으로 문장이 옴
+		○ ex) <span id = "이름"> 내용 </span>
+		○ ex) <span class = "그룹 이름"> 내용 </span>
+		
+		
+		
+	• DIV : 문자열을 원하는 부분만 선택해서 시각적인 효과를 줌
+		=>자동으로 줄바꿈이 되는 점에서 span과 다름
+		○ ex) <div id = "이름"> 내용 </dive>
+		○ ex) <div class = "그룹이름"> 내용  </div>
+		
+		
+		
+
+
+
+[ CSS 속성들 ]
+
+	1. font 스타일
+	• font : 한출에서 모든 폰트 속성을 설정할 때 사용
+	• font-weight : 볼드체 설정 (텍스트를 얼마나 두껍게 표현할지 설정)
+		○ font-weight : normal; =>보통 폰트 가중치 (400과 같음)
+		○ font-weight : bold; => 굵은 폰트 가중치 (700과 같음)
+		○ font-weight : lighter => 얇은 폰트
+		○ font-weight : bolder => 굵은폰트
+		○ =====>100,200~900까지 숫자로 표현 가능하며, 100배수로 표현해야 함.
+	• font-size : 폰트의 크기
+		○ font-size : 100%; => 백분율을 이용한 상대적 크기 설정
+		○ font-size : 1.5em; =>em을 이용한 상대적 크기설정 (em은 배수를 의미하는것으로 1.5em이면 1.5배라는 뜻이다. 
+		○ font-size : 20px; => px를 이용한 절대적 크기 설정 
+	• font-style : 이탤릭체(오른쪽으로 기울임) 설정 
+
+	2. text스타일
+	• color : 텍스트 색상
+		○ color : 색상; =>글씨의 색깔을 지정
+	• direction : 텍스트 작성 방향 지정
+		○ direction : rtl; => 오른쪽에서 왼쪽으로 작성
+		○ direction : ltr; => 왼쪽에서 오른쪽으로 작성
+	• letter-spacing : 글자간의 간격 지정
+	• line-height : 텍스트 줄의 높이 지정
+	• text-align : 텍스트 수평 정렬
+		○ text-align : center ; => 텍스트 가운데 정렬
+	• text-decoration : 텍스트 장식 지정
+	• text-indent : 텍스트 들여쓰기지정
+	• text-shadow : 텍스트 그림자 지정
+	• text-transform : 텍스트 대소문자 변환 지정
+	
+	3. text 서식
+	• <b>…</b> : 볼드체
+	• <strong>…</strong> : 텍스트 강조
+	• <em>…</em> : 텍스트 강조
+	• <i>…</i> : 기울임
+	• <code>…</code> : 텍스트가 코드임을 표시
+	• <sup>…</sup> : 위첨자(superscript)
+	• <sub>…</sub> : 아래첨자(subscript)
+
+
+
+	4. 특수문자
+	• &nbsp; : 공백 문자 한 개	
+	• &lt; : <
+	• &gt; : >
+	• &quot : "   =>그냥 " 써도 나옴
+	• &amp : &  =>그냥 & 써도 나옴
+	
+	
+	5. border
+	• border : 요소를 감사는 테두리 (경계선)
+		○ 기본 형식 => border : 선넓이 선모양 선색상;
+			§ 선 넓이 : px, thin, medium,thick
+			
+			
+
+			§ 선 모양 : none, dotted, dashed, solid, double, groove, ridge, inset, outset
+			
+			§ 선 색상 : 색상이름, rgb, 색상코드
+	• border-collapse : 이웃한 셀의경계선을 합칠것인지여부
+		○ border-collapse : collapse ; 
+		=>테이블 바깥 경계선과 안의 경계선 사이를 합침
+		
+		○ border-collapse : separate;
+		=>border-collapse의 기본요소로, 아래와 같이 테이블 바깥 경계선과 안의 경계선이 분리되어 있음
+		
+		○ border-collapse : inherit;
+		○ border-collapse : unset;
+	• margin : border의 바깥 여백
+		○ margin-top : 5px; => 상단여백 5px
+		○ margin-right : 5px; => 오른쪽 여백 5px
+		○ margin-bottom : 5px; => 하단 여백 5px
+		○ margin-left : 5px; => 왼쪽 여백  5px
+		○ margin : 5px 7px 3px 4px; => 위,오른쪽,아래,왼쪽 여백
+		○ margin : 5px; => 사방 모두 여백 5px;
+		○ margin : 5px 10px; =>위&아래 여백 5px, 좌&우 여백 10px
+		○ margin : auto 5;
+	
+	• padding : border안의 글씨와 border경계선 사이의 간격 
+	     (텍스트가 패딩을 껴 입으면 보더의 경계선이 된다고 생각하면 됨)
+
+
+	6. table
+	• width : 테이블의 가로 길이
+	• height : 테이블의 세로 길이
+	border-spacing : 테이블 셀 사이의 리
+	• empty-cells : 공백 셀을 그릴것인지 여부
+	• table-align : 테이블 셀의 정렬 설정
+
+	7. background 
+	=> 한줄에서 모든 배경 속성을 정의함.
+	• background-attachment : 배경 이미지가 고정되어 있는지 스크롤되는지 지정
+	• background-color : 배경색 지정 (color는 생략하고 그냥 background라고 써도 됨)
+	• background-image : 배경 이미지 지정(바둑판식으로 나옴)
+	• background-position :  배경 이미지의 시작위치 지정
+	• background-repeat : 배경 이미지의 반복여부 지정
+
+	8. list style
+	• =>리스트에 대한 속성을 한줄로 설정함.
+	• list-style-image : 리스트 항목 마터를 이미지로 지정
+	• list-style-position : 리스트 마커의 위치를 안쪽으로 할지 바깥쪽으로 할지 지정
+	• list-style-type : 리스트 마커의 타입 지정
+
+	8. float
+	• 문서에 있는 사진이나 그림을 정렬해주는것.
+	• float의 속성
+		○ float : none ; => 띄우지 않음
+		○ float : left ; => 왼쪽에 띄움
+		
+		○ float : right ; => 오른쪽에 띄움
+		
+		○ float : initial ; => 기본값으로설정
+		○ float : inherit ; => 부모요소로부터상속함
+
+	9. clear
+	• 취소하다라는 의미로 , 사진 주위로 글자가 붙지 않게 하는 것.
+		○ clear : none; => 기초값으로clear를 설정하지 않은것
+		○ clear : left; => 왼쪽을 취소
+		
+		○ clear : right; => 오른쪽으로 취소
+		○ clear : both; => 오른쪽 왼쪽을 취소
+		
+		
+	10. overflow
+	• 요소의 박스에 내용이 더 길 때, 어떻게 보일지 선택하는 속성
+		○ overflow : visible ; => 기본값으로, 내용이 더 길어도 그대로보임(흘러넘침)
+		○ overflow : hidden; =>내용이 넘치면 넘치는 부분을 자르고 보이지 않게 함. 
+		○ overflow : scroll; => 내용이 넘치든 넘치지 않든 옆에 스크바를 만들어줌
+		○ overflow : auto; => 내용이 넘칠때만 스크롤바가 보임.
+
