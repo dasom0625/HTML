@@ -1,0 +1,22 @@
+	1. 기본 시작
+
+	
+	2. a태그
+	• 링크를 통해 다른 웹페이지로 이동하거나 문서내에서 이동할 때 쓰는 링크태그
+	• a태그의 속성
+		○ <a href = "링크 주소"> 링크주소의 이름 </a>
+		=> 절대 주소  	ex) <a href = "http://www.naver.com">네이버</a> 
+		=> 상대 주소	ex) <a href = "../right.htm">오른쪽 페이지 이동</a>
+		
+		○ id를 이용한 URL (특히 같은 문서 내에서 가리키는 id)
+		=> ex. <div id = "TOP"> 안녕 </div>
+			  <a href = "#TOP"> 맨위로 이동 </div>
+	• a태그속성 target
+		○ _self : 연결 문서를 클릭한 창에서 여는것 (기본값)
+		○ _blank : 연결 문서를 새로운 탭에서 여는것
+		=> ex) <a href="http://www.naver.com" target="_blank">네이버로 바로가기</a>
+		○ _parent : 부모(상위 레벨)창에서 여는것
+		○ _top : 가장 상위창에서 연다
+	• 이미지로 링크 걸기
+		○ <a href="http://www.naver.com"><img src="../images/naverbanner.jpg" alt="네이버베너"></a>
+		
