@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+p{
+	font-size: 2.0em;
+}
+p[title]{
+	color : red;
+}
+p[class=ex]{
+/* p.ex{} 또는 .ex{} 로 적어도 됨 */
+	background: #ff80ab;
+	font-weight: bold;
+	font-style: italic;
+}
+p[name=짬뽕]{
+	text-decoration: underline;
+}
+p[id=p1]{
+/* #p1이라고 써도 됨 */
+	text-decoration: line-through;
+	
+}
+div{
+	border: 2px double purple;
+	padding : 20px;
+	height: 50px;
+}
+input[type=button]{
+	width: 150px;
+	height: 60px;
+	font-size: 1.5em;
+	background: #ce93d8;
+	color : white;
+	padding: 5px 20px;
+	border : 1px solid #d500f9;
+/* 	border-radius는 네모난 모서리를 둥글게 잘라내는 역할 */
+/* 	border-radius: 20px 50px; 위의 왼쪽과 아래의 오른쪽이20px, 위의 오른쪽과 아래의 왼쪽이 50px로 지정된다.  	 */
+/* 	border-radius: 20px 50px 200px; 위의 왼쪽이 20px, 위의 오른쪽과 아래의 왼쪽이 50px, 아래의 오른쪽이 200px 	 */
+	
+	border-radius: 20px;	
+}
+</style>
+</head>
+<body>
+<!-- title은 마우스 커스를 올려두면  title로 지정한 이름이 뜬다 -->
+<P title = 오늘아침>아침은 사과</P>
+<P title = 간식 class=ex>간식은 커피</P>
+<P name=짬뽕>점심은 짬뽕</P>
+<P class=ex>커피는 아메</P>
+<P id=p1>저녁은 피자빵</P>
+<P class=ex>야식은 박달래잡아먹기</P>
+<br>
+
+<p>버튼을 클릭하면 chage()함수를 호출하여 랜덤으로 색상을 발생시키는 것.</p>
+<p>id=d1인 div요소의 배경색을 변경한다.</p>
+<input type = button value = 클릭 onclick="change()">
+
+<br><br>
+<div id = d1>
+
+<p>실행하자마자 버튼 클릭없이 랜덤으로 색성을 변경한다.</p>
+<p> id=d2인 div요소의 배경색을 바꾼다.</p>
+<div id = d2>
+</div>
+<script>
+
+window.onload = function(){	//미리수행하지말고, 보여졌을때 수행해라
+	var byunsoo = document.getElementById('d2');
+ 	var byunsoo2 = document.querySelector('#d2');
+
+ 	setInterval(function(){
+// 		setInterval(() => {반복할 부분}, milliseconds);=>이렇게 하면 자동으로 0.5반복적으로 색을 바꿔준다. 
+	var cr = parseInt(Math.random()*255);
+	var cb = parseInt(Math.random()*255);
+	var cg = parseInt(Math.random()*255);
+	
+	d2.style.background = "rgb("+ cr +","+ cg +","+ cb +")";
+
+	}, 500);
+
+ 	}
+
+function change(){		//클릭할때만 실행되는 function //그래서 위에 input type쪽에 onlicik이 있어야 실행이 된다아아아아아아아아아
+	//id=d1로 접근
+	var byunsoo = document.getElementById('d1');
+ 	var byunsoo = document.querySelector('#d1');
+
+	var cr = parseInt(Math.random()*255);
+	var cb = parseInt(Math.random()*255);
+	var cg = parseInt(Math.random()*255);
+// 	var 또는 let은 생략이 가능
+	
+	d1.style.background = "rgb("+ cr +","+ cg +","+ cb +")";
+}
+</script>
+</body>
+</html>
