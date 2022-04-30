@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+form{
+	border : 2px solid green;
+	}
+form *{
+	font-size: 1.5em;
+	border: 2px dotted pink;
+}
+</style>
+
+
+</head>
+<body>
+
+<form name = "ff">
+	<p>스크립트에서 color값을 활용하여 색상을 적용시키기 위해 사용하는 것.</p>
+	<p>스크립트로 선택한 값을 가져가기 위해서는 아래와 같이 여러가지 방법이 있다.</p>
+	<p>1. 태그 이름을 이용 : <br>
+		1) document.getElementsByTagName('input') => 모든 input을 다 가져와라<br>
+		2) document.querySelector('input') => 맨 위에꺼만 가져와라<br>
+		3) document.querySelectorAll('input') => input다 가져와라</p>
+	<p>2. name 속성을 이용 : <br>
+		1)document.form이름.input에 있는 name속성    ex)document.ff.color<br>
+		2)document.getElementsByName('color')</p>
+	<p>3. id 속성을 이용 :<br>
+		1) document.getElemnetById('color')<br>
+		2) document.selector('#color')	</p>
+	<p>4. class 속성을 이용 : <br>
+		1) document.getElementByClassName('color')<br>
+		2) document.querySelector('.color')<br>
+		3) document.querySelectorAll('.color')</p>
+
+	<input type = "color" name = "color" id = "idcolor" class = "clcolor" onchange="changecolor()">
+</form>
+
+	<script>
+	//color요소에 접근하기//여긴 초기값이에용
+	var vcolor = document.ff.color.value
+	console.log(vcolor);
+	
+	//색깔 바꿔보기(F12눌러서 콘솔에서 확인해봐)
+	function changecolor(){
+		/* //vcolor = document.ff.color.value
+		
+		//아이디로 컬러값 줘보기
+		vcolor = document.getElementById('idcolor').value;
+		vcolor = document.querySelector('#idcolor').value;
+		
+		console.log(vcolor);
+		
+		//background색깔을 바꿔보기(실제로 바뀐다?)
+		document.ff.style.background = vcolor;*/
+		
+		vcolor = document.getElementsByTagName('input')[0].value;	//여러개라고 간주하는데, 그 중 [0]번째꺼 가져옴.
+		
+		document.querySelector('form').style.background = vcolor;
+	}
+
+	
+	</script>
+
+</body>
+</html>
