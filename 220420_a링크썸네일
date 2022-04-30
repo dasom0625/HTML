@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+   <head>
+      <meta charset = "utf-8">
+      <title></title>
+      <style>
+      #d1 *{
+            width : 20%;
+            margin : 30px auto;
+            border : 2px solid blue;
+            padding : 10px;
+      }
+      #d1 a{ /*#d1 안의 a태그*/
+         border : none;
+      }
+      #d2 img{
+         width : 30px;
+         height : 30px;
+      }
+      </style>
+   </head>
+   
+   <body>
+      <div id = "d1">
+      <h1>Web 커피 메뉴</h1>
+      <h2><a target = "_blank" href="아메리카노.html">아메리카노</a> 5000원</h2>
+      <p>에스프레소에 물을 추가한 것입니다.</p>
+      <h2><a target = "_blank"  href="카페라떼.html">카페라떼</a> 6000원</h2>
+      <p>에스프레소에 우유를 넣은 커피입니다.</p>
+      <h2><a target = "_blank"  href="카푸치노.html">카푸치노</a> 6000원</h2>
+      <p>커피 위에 우유거품을 얹은 커피입니다.</p>
+      </div>
+      <br><br>
+      
+      <div id = "d2">
+      <h1>Web 커피 메뉴</h1>
+      
+      <h2>아메리카노 5000원</h2>
+      <a target = "_blank" href="아메리카노.html">
+      </a>
+         <img src="../images/아메리카노.jpeg">
+      <p>에스프레소에 물을 추가한 것입니다.</p>
+      
+      
+      <h2>카페라떼 6000원</h2>
+      <a target = "_blank"  href="카페라떼.html">
+      <img src="../images/카페라떼.jpg">
+      </a>
+      <p>에스프레소에 우유를 넣은 커피입니다.</p>
+      
+      
+      <h2>카푸치노 6000원</h2>
+      <a target = "_blank"  href="카푸치노.html">
+      <img src="../images/카푸치노.jpg">
+      </a>
+      <p>커피 위에 우유거품을 얹은 커피입니다.</p>
+      </div>
+   </body>
+</html>
