@@ -1,0 +1,29 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	
+	<body>
+	
+	 autoplay 가 안되는 이유 <br>
+	  무분별한 광고때문이라고 합니다. 무작위 광고와 자동재생 미디어 때문에 사용자환경이 안좋아 지게 되기 때문이라고 하는데요,<br>
+     chroom 에서autoplay   안되고 edge에선  autoplay  됨
+	<br>
+	<br>
+<!-- 		<iframe src="multi/silence.mp3" allow="autoplay" id="audio" style="display: none"></iframe> -->
+		
+		<audio id="player" autoplay loop controls="controls" >
+		   <!--  <source src="../multi/old_pop.mp3" type="audio/mp3">--> 
+		    <source src="../multi/old_pop.mp3" type="audio/mp3">
+
+		</audio>
+
+ 
+
+		<!--  <audio src="multi/old_pop.mp3" autoplay controls  >-->
+		
+<!-- 		</audio> -->
+	</body>
+</html>
