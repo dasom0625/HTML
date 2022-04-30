@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+a{ 
+margin : 30px;
+}
+iframe{
+width : 80%;
+height: 600px;
+}
+span{	/*span은 인라인요소라서 크기지정 안됨*/
+color : red;
+font-weight: bold;
+<!--/*width: 5000px;	*//*인라인요소니까 크지 줘도 안변하지?*/-->
+<!--/*height: 5000px;	*//*인라인요소니까 안변하지?*/-->
+<!--/*display: inline(줄이안바뀌고); block(크기를 지정할수있음); none; inline-block(줄이 안바뀌면서 크기를 지정할수있음);*/-->
+display: inline-block;
+width: 500px;
+height: 500px;
+
+}
+</style>
+</head>
+<body>
+	<pre>
+	&lt; a href = "../0420/아메리카노.html" <span>target="_blank"</span>>아메리카노 &lt;/a>
+	</pre>
+
+
+	<a href = "../0420/아메리카노.html"target="_blank">아메리카노</a>
+	<a href = "../0420/카페라떼.html"target="_blank">카페라떼</a>
+	<a href = "../0420/카푸치노.html"target="_blank">카푸치노</a>
+	<br><hr><br>
+	<br>
+
+	<pre>
+	&lt; a href = "../0420/아메리카노.html" <span>target="ifr"</span>>아메리카노 &lt;/a>
+	iframe은 웹페이지 내부에 다른 웹페이지를 포함시킬 때 사용한다.
+	a태그에 target속성으로 iframe의 name을 지정 할 수 있다.
+	&lt;iframe <span>name= "ifr"</span> src = "../0421/리스트UL.html">&lt;/iframe>
+	</pre>
+	<a href = "../0420/아메리카노.html"target="ifr">아메리카노</a>	<!-- iframe의 이름을 타겟으로 주면 -->
+	<a href = "../0420/카페라떼.html"target="ifr">카페라떼</a>
+	<a href = "../0420/카푸치노.html"target="ifr">카푸치노</a>
+	<br><br>
+	<iframe name= "ifr" src = "../0421/리스트UL.html"></</iframe>
+</body>
+</html>
