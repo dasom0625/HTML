@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+form{
+	border : 1px solid blue;
+	padding : 10px;
+	width: 70%;
+}
+label{
+	display: inline-block;
+	width: 100px;
+}
+fieldset{
+	width: 80%;/*form이 100%라고 기준을 주고 fieldset을 생각하면 됨*/	
+	margin : 10px;
+}
+textarea{
+	margin : 10px;
+}
+input{
+	text-align: center;
+	float: center;
+}
+</style>
+</head>
+<body>
+
+
+
+<form action = "fieldset.jsp" method ="post">
+	<fieldset>
+		<legend>인적사항</legend>
+		
+		<label>이름</label>
+		<input type="text" name="name"><br><br>
+		
+		<label>주소</label>
+		<input type="text" name="addr"><br><br>
+		
+		
+		<label>전화번호</label>
+		<input type="text" name="tel"><br><br>
+		<input type="tel" name="tel"><br><br>
+		<!--└>이거 왜 만들었죠??기능이 없는데??걍 input type=text로 쓰세요 -->
+		
+		<label>메일</label>
+		<input type="email" name="mail"><br><br>
+		<!--└>input type="email"의 경우, @를 쓰라고 알림은뜨지만..그거말곤 아무것도 기능이 없음. 형식에 맞게 쓰지 않아도 걍 넘어감-->
+
+		<label>나이</label>
+		<input type="number" min="10" max="60" value="30" step="1" name="age">
+		<input type="range" min="10" max="60" value="30" step="1" name="age"><br><br>
+		
+		
+	</fieldset>
+	
+	
+	<fieldset>
+		<legend>경력사항</legend>
+		<label>기간</label>
+		<input type="date" name="start1">
+		~<input type="date" name="end1"><br>
+		<textarea rows="5" cols="50" name = "content1"></textarea><br>
+		
+		
+		<label>기간</label>
+		<input type="date" name="start2">
+		~<input type="date" name="end2"><br>
+		<textarea rows="5" cols="50" name = "content2"></textarea><br>
+		
+		<label>기간</label>	
+		<input type="date" name="start3">
+		~<input type="date" name="end3"><br>
+		
+		<textarea rows="5" cols="50" name = "content3"></textarea><br>
+		
+		
+	</fieldset>
+	
+<br>
+<button type = "submit" >제출</button>
+</form>
+</body>
+</html>
