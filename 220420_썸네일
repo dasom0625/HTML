@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset = "utf-8">
+	<title></title>
+	<style>
+	#d1 *{	/*<!--div중 d1만-->*/
+		width : 80%;
+		margin: 50px auto;
+		text-align : center;
+		border : 5px solid gray;
+		padding : 10px;
+		}
+	#d1 a{
+			border : none;
+			
+		}
+	
+	#ame, #latte, #cappu {
+		width : 50%;
+		height : 300px;
+		margin : 50px auto;
+		/*border : 2px solid green;*/
+		}		
+	img {
+		width : 49%;
+		height : 100%;
+	
+		}	
+		
+	pre{
+	font-size : 1.5em;
+	background-color : yellow;
+	}
+	
+	span{
+	color : red;
+	}
+	</style>
+	
+	</head>
+	
+	<body>
+	<pre>
+		&lt; <span>a href = "#ame</span>아메리카노&lt;/a>
+		a태그의 href속성에 id이름을 지정하여 사용
+		한 페이지의 내용이 많아 원하는 곳으로 스크롤바를 움직여야 할 경우, 스크롤바를 움직이지 않고 id 클릭으로 이동
+	</pre>
+	<div id  ="d1">
+		<h1>Web 커피 메뉴</h1>
+		<h2><a href = "#ame">아메리카노</a> 5000원</h2>
+		<p>에스프레소에 물을 추가한 것입니다.</p>
+		<h2><a href = "#latte">카페라떼</a> 6000원</h2>
+		<p>에스프레소에 우유를 넣은 커피입니다.</p>
+		<h2><a href = "#cappu">카푸치노</a> 6000원</h2>
+		<p>커피 위에 우유거품을 얹은 커피입니다.</p>
+	</div>
+		<br><br>
+		<br><br>
+		<br><br>
+	
+	
+	<hr>
+	<!-- 새로운 탭을 열거나 변경하지 않고 해당 페이지의 아래부분으로 가려면 id를 선언해주면 된다  -->
+	<div id ="ame">
+		<h1>아메리카노</h1>
+			<img src = "../images/아메리카노.jpg" alt ="아메리카노">
+	</div>
+		<br><br>
+		<br><br>
+		<br><br>
+		
+	<div id ="latte">
+		<h2>카페라떼</h2>	
+			<img src = "../images/라떼.jpg" alt ="카페라떼">
+			<img src = "../images/아메리카노.jpg" alt ="카페라떼">
+	</div>
+		<br><br>
+		<br><br>
+		<br><br>
+		
+	<div id ="cappu">
+		<h3>카푸치노</h3>	
+			<img src = "../images/에스프레소.jpg" alt ="카푸치노">
+	</div>
+		<br><br>
+		<br><br>
+		<br><br>
+</html>
