@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+	<body>
+	<pre>
+	 무음인 경우 항상 자동 재생이 가능.
+	음소거 ON: &lt;video> 요소에 muted 속성을 추가 하거나, video.muted 값을 true 로 설정한 경우는 자동 재생이 가능합니다.
+
+   구글에서 2018년에 Autoplay Policy를 재정의 했다.
+   SNS 및 여러 포스팅이 활발해 짐에 따라 용량이 큰 동영상 재생등이 사용자가 원치않는 리소스를 가져간다고 판단하여 브라우저에서 막아버렸다.
+
+   #1 &lt;video> 요소에 muted 속성 추가
+    &lt;video autoplay muted>&lt;/video>
+  
+  #2 video.muted 값을 true로 설정
+   var video = document.querySelector('video');
+   video.muted = true; // 
+   
+    동일 origin 도메인 내에서 유저 인터렉션 이벤트 발생 시 유음 자동 재생. (Chrome)- youtube
+   크로스 origin 각각의 서버에서 서로 접근하는것. 정상적인 방법을 통해서 접근을 하는것. 
+
+&lt;video autoplay muted>
+	</pre>
+	
+		<video src="../multi/trailer.mp4" autoplay controls  muted >
+		<video src="../multi/trailer.ogv" autoplay controls  muted > 
+		
+<!-- muted가 없으면 오디오 출력이 되지 않아서 자동재생이 안된다. 그래서 반드시 muted가 있어야 한다.-->
+<!-- controls가 있어야 아래 재생버튼이나 음량 버튼 등이 나온다.  -->
+		
+		</video>
+	</body>
+</html>
