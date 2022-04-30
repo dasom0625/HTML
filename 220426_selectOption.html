@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+form{
+	border : 5px solid red;
+	width: 400px;
+	height: auto;
+	margin : 10px;
+	padding: 10px;
+	
+}
+label{
+	display : inline-block;
+	width: 130px;
+	height: 40px;
+}
+
+select{
+	width: 170px;
+	font-size : 1.5em;	
+}
+select[name=addr]{
+	height: auto;
+}
+select[name=flower]{
+	height: 200px;
+}
+#flo{
+	width: 130px;
+	vertical-align: top;	
+}
+button{
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<form action = "selectionOption.jsp" method = "post">
+	<label><strong>이름</strong></label>
+	<input type = "text" name= "name"><br>
+
+	<label><strong>전화번호</strong></label>
+	<input type = "text" name= "tel"><br>
+
+	<label><strong>주소</strong></label>
+	<select name="addr">
+		<option value = "서울">서울</option><
+		<option value = "대전">대전</option>
+		<option value = "대구">대구</option>
+		<option value = "부산">부산</option>
+		<option value = "찍고">찍고</option>
+	</select>
+	
+	<br><br>
+	<label id ="flo"><strong>좋아하는꽃들</strong></label>
+	<select name="flower" mutiple="multiple" size="5">	<!-- mulitple은 여러개를 선택할 수 있는 것, size="5"는 화면에 5개를 보여준다는거  -->
+		<option value = "해바라기">해바라기</option><
+		<option value = "장미">장미</option>
+		<option value = "튤립">튤립</option>
+		<option value = "프리지아">프리지아</option>
+		<option value = "안개꽃">안개꽃</option>
+	</select>
+	<br><br>
+	<button type = "submit">전송</button>
+	<button type = "reset">취소</button>
+	
+	
+
+</form>
+</body>
+</html>
