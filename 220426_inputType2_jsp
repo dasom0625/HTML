@@ -1,0 +1,69 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h1{
+	color : red;
+}
+p{
+	border : 5px solid hotpink;
+	width: 30%;
+	height: 50px;
+	margin: 10px;
+	padding: 10px;
+}
+.pp{
+	float : left;
+}
+br{
+	clear : both;
+}
+
+
+</style>
+</head>
+<body>
+<h1>JPP : Java Server Page</h1>
+
+<%
+
+	//1. 한글 인코딩 처리
+	request.setCharacterEncoding("UTF-8");
+
+	//2. 
+	String userName = request.getParameter("name");
+	String userTel = request.getParameter("tel");
+	String userEmail = request.getParameter("email");
+	String userAddr = request.getParameter("addr");
+	
+	String userFile = request.getParameter("file");
+%>
+
+<div>
+	<p class="pp">이름</p>
+	<p class="pp"><%=userName%></p>
+	<br>
+	
+	<p class="pp">전화번호</p>
+	<p class="pp"><%=userTel%></p>
+	<br>
+	
+	<p class="pp">이메일</p>
+	<p class="pp"><%=userEmail%></p>
+	<br>
+	
+	<p class="pp">주소</p>
+	<p class="pp"><%=userAddr%></p>
+	<br>
+	
+	<p class="pp">첨부파일</p>
+	<p class="pp"><%=userFile%></p>
+	<br>
+	
+</div>
+</body>
+</html>
