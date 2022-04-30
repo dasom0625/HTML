@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="../css/public.css">
+<style>
+div{
+	border : 2px solid hotpink;
+	padding : 10px;
+	margin: 20px;
+
+}
+a{
+/* 	border : 1px double purple; */
+	padding: 10px;
+	margin : 10px;
+	font-size: 2.0em;
+}
+a:link {
+	/* 처음에 만들어질 때 원래 기본 색이 blue이다.  */
+	color : green;
+}
+	/* a:visited 는 기본적인 컬러가 보라색이다.  */
+a:visited{
+	color : red;	
+}
+	/* a:hover는 기본적으로 아래에 언더라인으로 설정되어있다.  */
+a:hover{
+	text-decoration: none; 
+	font-size: 1.5em;
+	/* line-through;  */
+	/* overline; */
+	/* underline; */
+	/* none; */
+}
+/* a:active는 누를때 색깔이고, 기본색이 빨강이다. */
+a:active{
+b	ackground: yellow;
+
+}
+p:hover{
+	color : red;
+}
+p:active{
+	font-size: 1.5em;
+	color : blue;
+}
+
+table{
+	border: 1px double hotpink;
+}
+td{
+	width: 250px;
+	height: 50px;
+	text-align: center;
+}
+
+#tab1 tr td:nth-child(2n-1) {
+	background: #FFB0CF;
+}
+#tab1 tr td:nth-child(2n) {
+	background: #BECDFF;
+}
+
+#tab2 tr:nth-child(2n-1){
+	background: #80d6ff;
+}
+#tab2 tr:nth-child(2n){
+	background: #0077c2;
+}
+/* #tab1 tr:nth-child(1),#tab2 tr:nth-child(1){ */
+
+#tab1 tr:nth-child(1) td{
+	background: black;
+	font-size : 1.5em;
+	color: white;
+}
+#tab2 tr:nth-child(1){
+	background: black;
+	font-size : 1.5em;
+	color: white;
+}
+
+</style>
+</head>
+<body>
+<pre>
+의사 클래스 : 
+상태에 따른 스타일을 지정한다.
+ a:link =>처음 만들어졌을 때 /a태그에서만 가능하다. 
+ a:visited =>클릭해서 해당 사이트에 방문하고 나서  / a태그에서만 가능하다.
+ a:hover => 마우스를 올려놨을 때  /a뿐만아니라 p,br,span등 다른 태그에서도 사용 가능하다.
+ a:active => 마우스를 누르고있는 상태일 때 /a뿐만아니라 p,br,span등 다른 태그에서도 사용 가능하다.
+
+</pre>
+	<div>
+<!-- 	target에 올수있는건 _self(기본설정), _blank, ifram의 이름 -->
+		<a href = "http://www.ddit.or.kr" target="_blank">ddit</a>
+		<a href = "https://plus.cnu.ac.kr" target="_blank">plus.cnu.ac.kr</a>
+		<a href = "http://www.hannam.ac.kr" target="_blank">한남대</a>
+		<br>
+		<p>배가고파요</p>
+		<p>잠도오네요</p>
+		
+	</div>
+<pre>
+의사클래스:
+그조에 따라 스타일을 지정
+nth-child(1)=>1번의 자식을 선택..
+nth-child(2n)=>짝수번째의 자식을 선택..
+nth-child(2n-1)=>홀수번째의 자식을 선택..
+nth-child(3n)=>3의배수번째의 자식을 선택..
+
+#tab1 tr td:nth-child(2n-1) {
+	background: #FFB0CF;
+}
+#tab1 tr td:nth-child(2n) {
+	background: #BECDFF;
+}
+</pre>
+<div>
+<table id = "tab1" border="1">
+	<tr>
+		<td>이름</td>
+		<td>주소</td>
+		<td>전화번호</td>
+		<td>이메일</td>
+		<td>생일</td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>		
+	
+</table>
+</div>
+
+<br><br>
+
+<pre>
+
+
+
+
+</pre>
+<div>
+<table id = "tab2" border="1">
+	<tr>
+		<td>이름</td>
+		<td>주소</td>
+		<td>전화번호</td>
+		<td>이메일</td>
+		<td>생일</td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>		
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>		
+	
+</table>
+</div>
+</body>
+</html>
