@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+	<head>
+	<meta charset = "utf-8">
+	<title></title>
+	
+		<style>
+		div{
+			border : 1px solid orange;
+			margin : 5px; /*상하좌우 모두 20px*/
+			width : 200px; /*블럭의 가로길이 200px로 자르기*/
+			height : 300px;
+			float : left; /*float는 속성으로, div 블럭을 왼쪽으로 배치하게 위함*/
+			overflow : auto; /*scroll; => 모든 블럭에 scroll이 생김 // hidden; => 공간이 부족할 경우, 아래부분을 잘라버림*/
+			}
+			
+		<!-- #d2{ -->
+			<!-- float : right /*d2만 블럭의 위치를 왼쪽으로 보내겠다는 의미*/ -->
+		<!-- } -->
+			
+		hr{
+			clear : both;
+		}
+		ul{
+			/*border : 1px solid blue;*/
+			}
+		
+		li{
+			/*border : 1px solid green;*/
+			}
+			
+		img{
+			width : 50px;
+			height : 50px;
+		}
+		
+		#d6,#d7,#d8{
+			width : 400px;
+		}
+		
+		#d6 ul{
+			list-style-type : circle;
+		}
+		
+		#d7 ul{
+			list-style-type : square;
+		}
+		
+		#d8 ul{
+			list-style-image : url(../images/클릭.jpg);
+		}
+		
+		</style>
+		</head>
+		<body>
+		<div id = "d1">
+			<ul>
+				<li>네이버</li>
+				<li>다음</li>
+				<li>네이트</li>
+				<li>w3schools</li>
+			</ul>
+		</div>
+			
+			
+		<div id = "d2"> 
+		<!-- /*이미지넣기*/ -->
+			<ul>
+				<li><img src = "../images/라떼.jpg" alt="라떼"></li>
+				<li><img src = "../images/아메리카노.jpg" alt="아메리카노"></li>
+				<li><img src = "../images/에스프레소.jpg" alt="에스프레소"></li>
+				<li><img src = "../images/진달래꽃.jpg" alt="진달래꽃"></li>
+			</ul>
+		</div>
+		
+		
+		<div id = "d3"> 
+		<!-- /*사이트 이동*/ -->
+			<ul>
+				<li><a href = "http://www.naver.com" target = "_blank">네이버</a></li>
+				<li><a href = "http://www.daum.net" target = "_blank">다음</a></li>
+				<li><a href = "http://www.nate.com" target = "_blank">네이트</a></li>
+				<li><a href = "http://www.w3schools.com" target = "_blank">w3schoos</a></li>
+			</ul>
+		</div>
+		
+		
+		<div id = "d4">
+		<!-- /*이미지 클릭하면 링크로 넘어가게 하기*/ -->
+			<ul>
+				<li><a href = "../0420/images/라떼.jpg"><img src = "../images/라떼.jpg" alt="라떼"></a></li>
+				<li><a href = "../0420/images/아메리카노"><img src = "../images/아메리카노.jpg" alt="아메리카노"></a></li>
+				<li><a href = "../0420/images/에스프레소"><img src = "../images/에스프레소.jpg" alt="에스프레소"></a></li>
+				<li><a href = "../0420/images/진달래꽃"><img src = "../images/진달래꽃.jpg" alt="진달래꽃"></a></li>
+			</ul>
+		</div>
+		
+		
+		<div id = "d5">
+		<!-- /*ul안에 ul을 넣어 출력해보기*/ -->
+			<ul>
+				<li>네이버
+					<ul>
+						<li>메일</li>
+							<ul>
+								<li>일주일 전</li>
+								<li>04월 20일</li>
+									<ul>
+										<li>오전</li>
+										<li>오후</li>
+									</ul>
+								<li>04월 21일</li>
+							</ul>
+						<li>로그인</li>
+						<li>회원가입</li>
+					</ul>
+				</li>
+				
+				<li>다음
+					<ol>
+						<li>메일</li>
+							<ul>
+								<li>일주일 전</li>
+								<li>04월 20일</li>
+									<ul>
+										<li>오전</li>
+										<li>오후</li>
+									</ul>
+								<li>04월 21일</li>
+							</ul>
+						<li>로그인</li>
+						<li>회원가입</li>
+					</ol>
+				</li>
+				<li>네이트</li>
+				<li>w3schools</li>
+			</ul>
+		</div>
+		
+		
+		<hr>
+		
+		<div id = "d6">
+		<hr3>ul {list-style-type : circle}</hr3>
+			<ul>
+				<li>네이버</li>
+				<li>다음</li>
+				<li>네이트</li>
+				<li>w3schools</li>
+			</ul>
+		</div>
+		
+		
+		<div id = "d7">
+		<hr3>ul {list-style-type : square}</hr3>
+			<ul>
+				<li>네이버</li>
+				<li>다음</li>
+				<li>네이트</li>
+				<li>w3schools</li>
+			</ul>
+		</div>
+		
+	
+		<div id = "d8">
+		<hr3>ul {list-style-type : ulr(../images/클릭.jpg)}</hr3>
+			<ul>
+				<li>네이버</li>
+				<li>다음</li>
+				<li>네이트</li>
+				<li>w3schools</li>
+			</ul>
+		</div>
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
