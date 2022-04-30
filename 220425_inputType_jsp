@@ -1,0 +1,87 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+h1{
+	color : red;
+}
+p{
+	width : 200px;
+	height: 50px;
+	border : 2px dotted gray;
+	font-size: 1.5em;
+	margin : 10px;
+	padding : 10px;
+	text-align: center;
+}
+#p1{
+	width : 80%;
+}
+.pp{
+	/*아이디 옆에 id오게 float : left처리 */
+	float : left;
+}
+br{
+	clear : both;
+}
+#food{
+	width : 500px;
+}
+</style>
+</head>
+<body>
+<h1>JSP : Java Server Page</h1>
+<p id = "p1">request 객체를 이용하여 클라이언트 전송데이터를 받아서 처리한다.</p>
+
+
+<%
+	//1.한글 인코딩 처리 먼저 하기
+	request.setCharacterEncoding("UTF-8");
+
+	//2.
+	String userId = request.getParameter("id");
+	String userName = request.getParameter("name");
+	String userPassword = request.getParameter("pw");
+	String userGender = request.getParameter("gender");
+	//getParameter는 하나만 가져오는것으로, food는 값을 여러개 받았기 때문에
+	//아래와 같이 values로 배열타입을 받는다. 
+	String userFood[] = request.getParameterValues("food");
+	
+	String str = "";
+	for(String f : userFood){
+		str += f + "&nbsp;";	//"&nbsp;"를 넣으면 공백이 여러칸 생성(\t)와 같음
+	}
+	
+%>
+<div>
+	<p class = "pp">아이디</p>
+	<p class = "pp"><%=userId %></p>
+	
+	<br>
+	
+	<p class = "pp">이름</p>
+	<p class = "pp"><%=userName %></p>
+	
+	<br>
+	
+	<p class = "pp">비밀번호</p>
+	<p class = "pp"><%=userPassword%></p>
+	
+	<br>
+	
+	<p class = "pp">성별</p>
+	<p class = "pp"><%=userGender%></p>
+	
+	<br>
+	
+	<p class = "pp">좋아하는 음식</p>
+	<p id = "food"><%=str%></p>
+	<!--<p><%=userFood%></p> =>음식은 현재 배열이라서 이렇게 넣으면 주소값으로 나온다.-->
+	
+</div>
+</body>
+</html>
