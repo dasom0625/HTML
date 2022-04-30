@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link type = "text/css" rel="stylesheet" href="../css/public.css">
+<style type = "text/css">
+span{
+	color : blue;
+	font-size: 1.5em;
+}
+
+</style>
+
+<script> //스크립트에선 타입이 없으므로, String이나 int가 아닌 var로만 선언해주면 됨)\
+
+	function aa(){ //사용자 함수(내가 만드는 함수)
+		
+//		alert("메롱 빈칸이지롱");	//내장함수(이미 만들어져 있는 함수)//팝업창 띄우는 역할
+		var userId = document.ff.id.value;
+		var userName = document.ff.name.value;
+		
+		alert("아이디 = "+userId +" 이름  = "+userName );
+	}
+
+</script>
+</head>
+<body>
+<pre>	
+	&lt;input type = "button" value="확인"&gt;
+	&lt;button type = "button"&gt;확인&lt;/button&gt;
+	==>
+ 	type="button"인 요소는 특별한 기능이 없다.
+	그렇기 때문에 script를 이용하여 기능을 부여해주어야 한다.
+	
+	<span>onclick = "함수이름()"</span> : 클릭 이벤트로 정의된 함수를 호출한다.
+	==>
+	[함수정의]
+	=>return은 있어도 되고 없어도 되고..
+	=>무조건 function으로 씀.
+	1) 파라미터가 없을 때 : function aa(){     return 100;}
+	2) 파라미터가 있을 때 : function aa(x){                 }
+	&lt;input type = "button" value = "확인" <span>onclick =</span>""&gt;
+	&lt;button type = "button" <span>onclick = </span>""&gt;확인&lt;/button&gt;
+	
+</pre>
+
+<form name = "ff" action="buttons.jsp" method = "get">
+	<label>아이디</label>
+	<input name = "id" ><br>	<!-- ff에 있는 id =>접근할때document.ff.id-->
+	
+	<label>이름</label>
+	<input name = "name"><br>	<!-- ff에 있는 name =>접근할때document.ff.name-->
+	
+	<input type = "button"> 
+	<!--<input type = "button"은 기능이 없음.대신 기능을 만들어줄 수 있음. -->
+	<input type = "button" value = "확인" onclick ="aa()"> 
+	
+	<input type = "submit">
+	<input type = "reset"><br>
+	
+	<button type = "button"onclick = "aa()">확인</button>
+	<!--<button type = "button">확인</button>은--> 
+	<!--value가 없어서 여는 태그와 닫는 태그 사이에 반드시 글씨가 있어야 함.  -->
+	<button type = "submit">전송</button>
+	<button type = "reset">취소</button>
+	<button onclick = "aa()">전송(type생략)</button>
+	<!--<button>전송</button>와 같이 type 이 생략되면 기본 전송(button) 값을 가진다.  -->
+</form>
+</body>
+</html>
