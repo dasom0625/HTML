@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+form{
+	border : 5px solid hotpink;
+	margin : 30px auto;
+	padding : 20px;
+	width : 400px;
+}
+label{
+	display : inline-block;
+	width: 100px;
+	height: 30px;
+	text-align: center;
+}
+#im{
+	width : 100px;
+	heigth : 100px;
+	vertical-align: middle;
+}
+span{
+	color : red;
+	font-weight: bold;
+}
+br{
+	clear : both;
+}
+
+</style>
+</head>
+<body>
+<pre>
+이미지를 이용하여 전송한다. 
+&lt;input id="im" <span>type = "image"</span> src="../images/클릭.jpg"&gt;
+</pre>
+<form action = "input_type2.jsp" method="post">
+	<form>
+		<label>이름</label>
+		<input type = "text" name = "name" value ="이름">
+		<br>
+		
+		<label>전화번호</label>
+		<input type = "text" name = "tel" value = "전화번호">
+		<br>
+		<label>이메일</label>
+		<input type = "text" name = "email" value = "이메일">
+		<br>
+		<label>주소</label>
+		<input type = "text" name = "addr" value = "주소">
+		<br>
+		<label>첨부파일</label>
+		<input type = "file" name = "file" value = "파일">
+		<input type = "hidden" value ="10" name ="">
+		<!-- hidden은 입력 할 수 없기때문에 반드시  value를 작성해줘야 한다.-->	
+		<br><br>
+		
+		<input type = "submit" value="전송">
+		<input type = "reset" value="취소">
+		<input id="im" type = "image" src="../images/클릭.jpg">
+	</form>
+</body>
+</html>
