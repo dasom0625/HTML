@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+form{
+	border: 5px solid hotpink;
+	margin : 50px;
+	padding : 20px;
+	width: 50%;
+	height: 280px;
+}
+label{
+	display : inline-block;
+	width: 100px;
+	height: 50px;
+}
+#food{
+	width: 130px;
+	display : block;
+}
+</style>
+</head>
+<body>
+<form action = "input_type.jsp" method="post">
+	<label>아이디</label>
+	<input type = "text" name = "id"><br>
+	
+	<label>이름</label>
+	<input type = "text" name = "name"><br>
+	
+	<label>비밀번호</label>
+	<input type = "password" name = "pw"><br>
+	
+	<label>성별</label>
+	<input type = "radio" name = "gender" value = "남자">남자
+	<input type = "radio" name = "gender" value = "여자">여자
+	
+	<br><br>
+	<label id="food"><strong>좋아하는 음식</strong></label>
+	<input type = "checkbox" checked name = "food" value = "떡볶이">떡볶이 <!-- checked를 넣은채로 실행하면 check가 이미 되어있는 상태로 실행이 된다. -->
+	<input type = "checkbox" name = "food" value = "오뎅">오뎅
+	<input type = "checkbox" name = "food" value = "보쌈">보쌈
+	<input type = "checkbox" name = "food" value = "닭똥집">닭똥집
+	<input type = "checkbox" name = "food" value = "치킨">치킨
+	<input type = "checkbox" name = "food" value = "닭발">닭발
+	<input type = "checkbox" name = "food" value = "오돌뼈">오돌뼈
+	<br><br>
+	<input type = "submit" value="전송">
+
+	
+</form>
+</body>
+</html>
