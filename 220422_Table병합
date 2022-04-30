@@ -1,0 +1,164 @@
+//colspan과 rowspan
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table {
+	margin : 50px auto;
+}
+
+#tab 1{
+	border : 3px double purple;
+}
+th {
+	height : 60px;
+	margin : 50px auto;
+}
+
+td {
+	width : 200px;
+	height : 50px;
+}
+
+
+#tab2 {
+	border : 20px outset red;
+	border-collapse : dotted blue;
+	
+}
+
+#tab2 td {
+	border : 2px dotted blue;
+	}
+
+#tab3 {
+	border : 20px outset blue;
+}
+#tab3 th{
+	width : 200px;
+	height : 50px;
+	font-size : 1.5em;
+	}
+
+#tab3 #first {
+	font-size : 2.5em;
+	height : 100px;
+}
+
+#tab3 td{ /*th와 td는 가로길이를 공유한다. 현재, 위에 th에서 가로길이를 줬으므로 세로길이에만 따로 값을 줬다.*/
+	height : 50px;
+	text-align : center;
+}
+
+
+#tab3 #info {
+	width : 500px;
+}
+
+#tab3 .t {
+	text-align : left;
+	padding : 10px auto;
+	/*padding : 칸 안에서 위아래 간격주는 것.*/
+}
+</style>
+
+</head>
+<body>
+<table id = "tab1" border = "1">
+	<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	</tr>
+
+	<tr>
+	<td rowspan="2"></td>
+	<td></td>
+	<td></td>
+	</tr>
+
+	<tr>
+	<td></td>
+	<td></td>
+	</tr>
+
+	<tr>
+	<td colspan="3"></td>
+	</tr>
+
+</table>
+
+
+<table id = "tab2" border = 1>
+	<tr>
+	<td colspan="2"></td>
+	<td colspan="2"></td>
+	<td></td>
+	<td></td>
+	</tr>
+
+	<tr>
+	<td colspan="4"></td>
+	<td colspan="2"></td>
+	</tr>
+
+	<tr>
+	<td colspan="4"></td>
+	<td colspan="2" rowspan="2"></td>
+	</tr>
+
+	<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	</tr>
+
+</table>
+
+<table id = "tab3" border = 1>
+	
+	<tr>
+	<th id="first" colspan="5">평생 다솜 강좌 소개 - 2022년도 4월 22일</th>
+	</tr>
+	
+	<tr>
+	<th>강좌이름</th>
+	<th>강의자</th>
+	<th id="info">소개</th>
+	<th>강좌코드</th>
+	<th>실습비</th>
+	</tr>
+
+	<tr>
+	<td>샤우팅</td>
+	<td>이다솜</td>
+	<td class = "t">우와아아아아아ㅏ아아아아아아아아아ㅏ아아앙</td>
+	<td>H27</td>
+	<td>10원</td>
+	</tr>
+
+	<tr>
+	<td>알림</td>
+	<td>이다솜</td>
+	<td class = "t">좀있으면 점심시간이에요오오오오오오오오오오</td>
+	<td>H28</td>
+	<td>20원</td>
+	</tr>
+
+	<tr>
+	<td>점심메뉴</td>
+	<td>금성칡냉면</td>
+	<td class = "t">오늘 점심은 제육볶음이지롱</td>
+	<td>H29</td>
+	<td>30원</td>
+	</tr>
+
+
+</table>
+</body>
+</html>
