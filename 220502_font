@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap" rel="stylesheet">
+
+<style>
+p{
+	font-size: 2.0em;
+}
+#p1{
+	font-family: serif;
+	font-style: italic;
+}
+#p2{
+	font-family: sans-serif;
+	font-weight: bold;
+}
+#p3{
+	font-family: monospace;
+	font-size: 2.5em;
+}
+#p4{
+	font-family: fantasy;
+}
+#p5{
+	font-size: 1.5em;
+	font-style: italic;
+	font-weight: bold;
+	font-family: serif;
+	line-height: 2.0em; 
+/* 	line-height는 여러줄일때, 줄간격을 설정하는것이다. 이때, px로 줘도되고 em으로 줘도 됨. */
+
+	font : italic small-caps bold 2.2em/40px serif;
+/* 	small-caps 는 단어의 첫 글자만 사이즈를 크게하고, 뒤에 글자는 소문자처럼 작게 만든는것. */
+}
+#p6{
+	font : italic bold 2.2em/40px sans-serif;
+}
+#p7{
+	font : italic bold 2.2em/40px sans-serif;
+	font-family: 'Tapestry', cursive;
+}
+
+</style>
+</head>
+<body>
+
+	<p id = p1> Hello World!! Good Morning Happy New Year</p>
+	<p id = p2> Hello World!! Good Morning Happy New Year</p>
+	<p id = p3> Hello World!! Good Morning Happy New Year</p>
+	<p id = p4> Hello World!! Good Morning Happy New Year</p>
+	
+	
+	<p id = p5>  Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year</p>
+	
+	<p id = p6>  Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year</p>
+	
+	<p id = p7>  Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	 Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year</p>
+
+	
+</body>
+</html>
