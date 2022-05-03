@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	div{
+	width: 600px;
+	height: auto;
+	border: 10px double hotpink;
+	margin: 10px;
+	padding: 10px;
+	}
+	#d3{
+	word-wrap : break-word;
+	}
+	span{
+	color : red;
+	font-size: 1.5em;
+	}
+	p{
+	font-weight: bold;
+	}
+	#d4{
+	word-wrap : break-word;
+	}
+	</style>
+	
+	<!-- 2.id=d4를 위한 script생성 및 함수 만들기 -->
+	<script>
+	function proc() {
+		//입력
+		var invalue = prompt("문자를 입력하세요 > ");
+		
+		//입력받은 invalue를 id=d4인 요소를 검색
+		var out = document.querySelector('#d4');//out변수에 출력하기위해 만들기
+
+		//var out에 저장된 var invalue에 입력받은 내용을 출력
+		out.textContent += invalue;
+// 		또는 out.innerText = invalue;
+	}
+	</script>
+<!-- --------------------------------------------------------------------------------------- -->
+</head>
+<body>
+<!-- ------------------------------------------------------------------------------ -->
+	<div id = d1>
+	<p>정상적으로 띄어쓰기 입력한 상태=></p>
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	</div>
+	
+<!-- --------------------------------------------------------------------------------------	 -->
+	<div id = d2>
+	<p>띄어쓰기를 하지 않은 상태=></p>
+	HelloWorld!!GoodMorningHappyNewYearHelloWorld!!GoodMorningHappyNewYearGoodMorningHappyNewYear
+	</div>
+<!-- ------------------------------------------------------------------------------------- -->
+	<div id = d3>
+	<p>띄어쓰기를 하지 않고 입력한 상태를 <span>word-wrap : break-word;</span>으로 border안의 범위를 벗어나지 않도록 설정=></p>
+	HelloWorld!!GoodMorningHappyNewYearHelloWorld!!GoodMorningHappyNewYearGoodMorningHappyNewYear
+	</div>
+	
+<!-- ----------------------------------------------------------------------------------------	 -->
+	<br><hr><br>
+	
+	<!-- //1 -->
+	<p>button클릭시, prompt()함수를 이용하여 문자를 입력받고(java의 scanner역할), d4인 div요소에 출력</p>
+	<input type="button" value = "확인" onclick = "proc()"><br><br>
+	<div id = d4> 
+	
+	</div>
+</body>
+</html>
