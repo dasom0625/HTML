@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	div{
+	margin: 20px;
+	height: 100px;
+	}
+	#d1{
+	border: 30px inset red;
+	}
+	#d2{
+	border: 30px outset red;
+	}
+	#d3{
+	border: 30px groove green;
+	}
+	#d4{
+	border: 30px ridge green;
+/* 	border: 30px ridge red;=>그림자처럼 나옴. */
+	}
+	
+	
+	</style>
+</head>
+<body>
+	<div id = d1>
+	
+	</div>
+	<div id = d2>
+	
+	</div>
+	<div id = d3>
+	
+	</div>
+	<div id = d4>
+	
+	</div>
+</body>
+</html>
