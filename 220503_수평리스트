@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	ul{
+		border-top : 1px solid red;
+		border-bottom : 1px solid red;
+/* 		또는 */
+/* 		border : 2px solid red; */
+/* 		border-left : none; */
+/* 		border-right : none; */
+
+
+		padding : 10px auto;
+		width : 1500px; 
+		height : 80px;
+		list-style-type: none;
+	}
+	li{
+		margin : 10px;
+		text-transform: uppercase;
+		padding : 10px;
+		width: 200px;
+		margin-left: 100px;
+		float : left;
+		height: auto;
+	}
+	a{
+/* 	글자간격, 글자크기 */
+	font-size: 1.5em;
+	letter-spacing: 20px;	
+	}
+	a:link{
+	text-decoration: none;
+	color : green;
+	}
+	a:visited {
+	color: red;
+	}
+	a:hover{
+	background: pink;
+	text-decoration: underline;
+	}
+	a:active{
+	color: blue;	
+	font-size: 2.0em;
+	}
+	
+	
+	</style>
+</head>
+<body>
+<div>
+	<ul>
+		<li><a href="http://www.naver.com">Home</a></li>
+		<li><a href="http://www.daum.net">Blog</a></li>
+		<li><a href="http://www.w3schoos.com">About</a></li>
+		<li><a href="http://www.nate.com">Contact</a></li>
+	</ul>
+</div>
+</body>
+</html>
