@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		div{
+		width : 150px;
+		height : 150px;
+		border : 2px solid darkgreen;
+		margin : 5px;
+		font-weight: bold;
+		text-align: center;
+		}
+	#d1,#d5,#d9{
+		background: yellow;
+	}
+	#d2,#d6,#d10{
+		background: #ccff90;
+	}
+	#d3,#d7,#d11{
+		background: #b0ff57;
+	}
+	#d4,#d8,#d12{
+		background: #76ff03;
+	}
+	#d6{
+		position: relative;
+		top : 80px;
+/* 		top : 80px;=>아래에서 위로 80px올라감 */
+		left : 50px;
+		font-weight: bold;
+	}
+	#d11{
+		position: absolute;
+		top : 200px;
+		left : 150px;
+		font-weight: bold;
+	}
+	#d13{
+		background: #ff79ff;
+		position: fixed;
+/* 		position: fixed; =>스크롤바를 내려도 위치가 고정되어 있어 영향을 받지 않는다. */
+
+		top : 300px;
+		right : 50px;
+	}
+	#fix{
+		position : fixed;
+		top : 250px;
+		right : 50px;
+	}
+	</style>
+
+</head>
+<body>
+	<h2>1.정적위치 : 정상적인 흐름에 따라 배치함.(#d1-#d4)</h2>
+	<div id= "d1">#d1</div>
+	<div id= "d2">#d2</div>
+	<div id= "d3">#d3</div>
+	<div id= "d4">#d4</div>
+
+
+	<h2>2.상대위치 : 정상적인 배치를 기준으로 설정.(#d5-#d8)</h2>
+	<div id= "d5">#d5</div>
+	
+	<div id= "d6">
+		#d6<br>
+		position: relative;
+		top : 80px;
+		left : 50px;
+		font-weight: bold;
+	</div>
+	
+	<div id= "d7">#d7</div>
+	<div id= "d8">#d8</div>
+
+
+	<h2>3.절대위치 : 컨테이너의 원점을 기준으로 설정.(#d9-#d12)</h2>
+	<div id= "d9">#d9</div>
+	<div id= "d10">#d10</div>
+	<div id= "d11">
+		#d11<br>
+		position: absolute;
+		top : 200px;
+		left : 150px;
+		font-weight: bold;
+	</div>
+	<div id= "d12">#d12</div>
+	
+	
+	<h2 id = fix>4.고정위치 (#d13)</h2>
+	<div id= "d13">
+	#d13<br>
+	background: #ff79ff;
+	position: fixed;
+	top : 300px;
+	right : 50px;
+	</div>
+</body>
+</html>
