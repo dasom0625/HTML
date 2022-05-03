@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	body{
+		min-width: 1200px;
+/* 		창 크기를 줄였을때, 1200px이하로 줄여지면 더이상 줄여들지 않고 크기를 유지함 ex)네이버 */
+	}
+
+	div{
+	box-sizing : border-box;
+/* 	box-sizing : border-box;=>사이즈 줄여도 박스가 아래로 넘어가지 않고 그대로 유지하게 */
+	border-radius: 20px;
+	text-align: center;
+	margin-top : 5px;
+	margin-bottom : 5px;
+	font-weight: bold;
+	}
+	#header{
+	background: yellow;
+/* 	float: top; */
+	height: 100px;
+	
+	}
+	#nav{
+	width : calc(25% - 1px);
+/* 	width : calc(25% - 1px); =>사이즈 줄여도 박스가 아래로 넘어가지 않고 그대로 유지하게 */ 
+	background : pink;
+	float: left;
+	width: 35%;
+	height: 200px;
+	}
+	
+	#content{
+	width : calc(70% - 1px);
+/* 	width : calc(70% - 1px); =>사이즈 줄여도 박스가 아래로 넘어가지 않고 그대로 유지하게 */ 
+	background : lightgreen;
+	width: 64%;
+	height: 200px;
+	float : right;
+	}
+	#footer{
+	clear: both;
+	background: hotpink;
+	float: bottom;
+	height: 100px;
+	}
+
+</style></head>
+<body>
+	<div id="header">header</div>
+	<div id="nav">nav</div>
+	<div id="content">content</div>
+	<div id="footer">footer</div>
+</body>
+</html>
