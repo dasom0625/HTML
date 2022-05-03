@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		table{
+		border : 2px solid blue;
+		margin : 20px auto;
+/* 		border-collapse: collapse; */
+/* 		border-collapse: collapse;=>테이블 안의 선이 하나로 합쳐짐 */
+		border-spacing: 20px;
+/* 		border-collapse가 아닐때 가능함.*/
+
+		empty-cells: hide;
+/* 		empty-cells: 내용이 없는 공백셀을 그릴건지 안그릴건지를 선택 =>show는 보이는것, hide는 보이지 않는것. */
+		
+		}
+		td{
+		width: 200px;
+		height: 50px;
+		text-align: center;
+		}
+		
+		tr:nth-child(2n-1){	
+/* 		테이블의 짝수번쨰줄... */
+		background: #ff844c;
+		}
+		
+		.od{
+		background: yellow;
+		}
+		tr:nth-child(1){
+/* 		첫번째줄 */
+		background: red;
+		color : white;
+		font-size: 2.0em;
+		font-weight: bold;
+		}
+	</style>
+</head>
+<body>
+	
+	<table border = "1">
+	
+		<tr>
+			<td>이름</td>
+			<td>주소</td>
+			<td>전화번호</td>
+		</tr>
+
+		<tr class=od>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	
+		<tr class=od>
+			<td>1</td>
+			<td>2</td>
+			<td></td>
+		</tr>
+
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	
+	</table>
+</body>
+</html>
