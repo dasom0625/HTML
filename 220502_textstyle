@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	div{
+		border: 10px double gold;
+		margin: 20px;
+		padding : 10px;
+		font : italic 2.0em/30px ;
+	/* 	font : 글씨체 글자크기/ 줄간격 */
+	}
+	#d1{
+	letter-spacing: 10px;
+/* 	letter-spacing: 글자와 글자사이의 간격 */
+	line-height: 50px;
+/* 	line-height: 줄간격 */
+	}
+	#d2{
+	text-align: right;
+	text-decoration: underline;
+	}
+	#d3{
+	text-indent: 50px;
+/* 	text-indent:들여쓰기 */
+	}
+	span{
+	background: silver;
+	}
+	#sp1{
+	text-transform: uppercase; 
+/* 	text-transform: uppercase는 모두 대문자변경 */
+	text-decoration: underline;
+/* 	text-decoration: underline는 글씨 밑에 선긋기 */
+	}
+	#sp2{
+	text-transform: lowercase;
+/* 	text-transform: lowercase는 모두 소문자로 변경 */
+	text-decoration: overline;
+/* 	text-decoration: overline는 글씨위에 선긋기 */
+	}
+	#sp3{
+	text-transform: capitalize;
+/* 	text-transform: capitalize는 단어의 첫글자만 대문자 */
+	text-decoration: line-through;
+/* 	text-decoration: line-through는 글씨 중앙에 선 긋기 */
+	}
+	h1{
+	text-shadow: 20px 20px 5px red;
+/* 	text-shadow: 20px(들어오는좌표) 20px(내보내는좌표) 5px(선명도) red(색깔) => 선명도부분이 숫자가 작을수록 글씨가 선명해짐 */
+	}
+	textarea {
+	direction: rtl;
+/* 	direction: ltr->왼쪽에서 오른쪽으로 글씨를 씀. */
+/* 	direction: rtl->오른쪽에서 왼쪽으로 글씨를 씀. */
+	
+}
+	</style>
+</head>
+<body>
+<textarea rows="10" cols="50"></textarea>
+<br><br>
+	<div id = d1>
+	<h1>Hello World!</h1>
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	</div>
+
+	<div id = d2>
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	</div>
+	
+	<div id = d3>
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! <span id = sp1>Good Morning Happy New Year Hello World!!</span> Good Morning Happy New Year
+	Hello World!! <span id = sp2>Good Morning Happy New Year Hello World!!</span> Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	Hello World!! <span id = sp3>Good Morning Happy New Year Hello World!!</span> Good Morning Happy New Year
+	Hello World!! Good Morning Happy New Year Hello World!! Good Morning Happy New Year
+	</div>
+</body>
+</html>
