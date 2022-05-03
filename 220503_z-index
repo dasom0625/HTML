@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div{
+	width: 100px;
+	height : 100px;
+	border: 2px solid blue;
+	margin: 10px;
+	position: absolute;
+	}
+	
+	#d1{
+	background: #cddc39;
+	top : 50px;
+	left : 50px;
+/* 	z-index: 100; */
+/* 	z-index: 100; => 가장 위로 올라오게 하는 것. 	 */
+	}
+	#d2{
+	background: #8bc34a;
+	top : 80px;
+	left : 70px;
+	}
+	#d3{
+	background: #4caf50;
+	top : 110px;
+	left : 90px;
+	}
+	#d4{
+	background: #009688;
+	top : 140px;
+	left : 110px;
+	}
+	hr{
+	position: relative;
+	top:250px;
+	}
+	img{
+	position: relative;
+	top : 150px;
+	left : 200px;
+	z-index: -1;
+/* 	z-index: -1;=>그림이 글씨 뒤로 간다.  */
+	
+	}
+	
+
+</style>
+</head>
+<body>
+	<div id=d1></div>
+	<div id=d2></div>
+	<div id=d3></div>
+	<div id=d4></div>
+	<hr>
+	
+	<img alt="톰과제리.jpg" src="../images/톰과제리.jpg">
+	낮잠 자기, 먹기, 낮잠 자기, 그리고 제리 쫓아다니기… 톰의 일상이다. 
+	제리와 같은 집에 동거동락동고동락 하면서도 제리를 잡기 위해 호시탐탐 기회를 노리는 톰. 
+	크기는 작지만 번뜩이는 꾀로 언제나 톰을 골탕먹이는 생쥐 제리. 
+	톰은 잠자고 먹는 시간을 빼고는 항상 제리를 골탕먹이려는 생각에 가득 차 있지만 언제나 자신이 함정에 빠지고 마는데… 제리를 괴롭히기 위해 쫓아다니는 말썽꾸러기 고양이 톰과 톰을 골탕먹이는 영리한 생쥐 제리의 쫓고 쫓기는 좌충우돌 해프닝이 다시 시작된다!
+</body>
+</html>
