@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href=" http://192.168.36.15/webpro/css/public.css">
+
+<style>
+	div{
+	height: 130px;
+	}
+	label{
+	display: inline-block;
+	width : auto;
+	height: auto;
+	}
+</style>
+
+<script>
+	function calc(){
+		//1. 입력한 값 가져오기(get)
+		xvalue = parseInt(document.getElementById('x').value);//input으로 받은 값 가져오기
+		yvalue = parseInt(document.querySelector('#y').value);//이렇게 가져와도 됨
+		
+		hap = xvalue + yvalue
+
+		//2. 더한값을 대입하라.
+		document.getElementById('sum').value = hap;
+		
+		
+	}
+
+</script>
+</head>
+<body>
+<pre>
+1. input요소를 스크립트에서 사용하는 방법
+=>value를 이용해야 한다. 
+ex. document.getElementById('아이디').value
+ex. document.querySelector('#아이디').value
+
+2. 스크립트에서 수행된 결과값을 input요소에 출력하기위해서도 value를 이용한다. 
+ex. document.getElementById('아이디').value = 결과값;
+</pre>
+	<body>
+    <h3>덧셈 계산기</h3>
+    
+    <div>
+	    <form name="myform">
+	        <label>첫번째 정수    :</label>        
+	        <input id="x"><br>
+	      
+	      	<labe>두번째 정수      :</labe>        
+	        <input id="y"><br>
+	       	<label>두 정수의 합계 :</label>         
+	        <input id="sum"><br>
+	        <br>
+	        <input type="button" value="계산" onclick="calc();">
+	    </form>
+    </div>
+</body>
+</body>
+</html>
