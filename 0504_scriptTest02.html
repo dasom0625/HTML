@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<link rel = "stylesheet" href = "../css/public.css">
+	<style>
+		div{
+		border : 2px dotted green;
+		margin: 10px;
+		padding: 10px;
+		width : 50%;
+		height: auto;
+		
+		}
+		h1{
+		color : red;	
+		}
+		p{
+		
+		}
+	</style>
+	
+	<script>
+	//1. 날짜 만들기
+	var now = new Date();
+	
+	var today1 = now.toLocaleString();	//날짜+시간
+	var today2 = now.toLocaleDateString(); //날짜만
+	var today3 = now.toLocaleTimeString();	//시간만
+	
+	
+	//2.div요소를 검색(이때, window.onload를 반드시 써줘야 아래 div가 여기서 실행된다.)
+	window.onload = function(){
+
+ 	var out = document.querySelector('div');	//div가 여러개이더라도 첫번째 div만 찾는것..
+
+ 	//3. out변수를 이용해서 today1의 변수값을 출력하기
+//  	out.textContent = today1;
+ 	out.innerHTML = today1 + "<br>";//출력내용에 html의 태그인 <br>까지 포함되어있으니  innerHTML사용
+ 	out.innerHTML += today2 + "<br>";	//+=을 붙이지 않으면 today1에 덮어쓰게된다. 꼭 써야함!!
+ 	out.innerHTML += today3 + "<br>";
+	}
+	
+	</script>
+</head>
+<body>
+	<pre>
+	html요소에 내용 출력하기
+	innerHTML : 출력 내용 속에 HTML태그가 포함 될 경우
+	textContent : 출력 내용 속에 HTML태그가 포함되지 않는 경우
+	innerText : 출력 내용 속에 HTML태각 포함되지 않는 경우
+	</pre>
+	<h1>오늘도 행복하세요</h1>
+	<p>실행하면 오늘의 날짜를 생성하여 아래의 div요소에 출력한다.</p>
+	<div></div>
+	<br>
+	<hr>
+	<input type = "button" value = "확인" onclick="alert('HELLO')">
+<!-- 	alert('alert를 띄울 내용')은 내장함수이다.  -->
+
+</body>
+</html>
