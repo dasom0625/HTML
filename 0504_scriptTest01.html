@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel ="stylesheet" href=" http://192.168.36.15/webpro/css/public.css">
+
+<style>
+</style>
+
+<script>
+function calc(){
+	//1. prompt만들기
+	x = prompt("첫번째 정수를 입력하세요","1부터 100까지"); //원래는 x = window.prompt();로 써야하지만, window는 최상위 객체라서 생략가능.
+	y = prompt("두번째 정수를 입력하세요","1부터 100까지");
+	
+	hap = parseInt(x) + parseInt(y);//parseInt는 덧셈에만 적용된다!
+
+	//2. id=d1을 검색
+	out = document.getElementById('d1'); //원래는 window.document.getElemnetById()이지만, window는 최상위객체라서 생략가능.
+	
+	//3. 출력내용 만들기
+	str = "첫번째 정수 값 : " + x +"<br>";
+	str += "두번째 정수 값 : " + y + "<br>";
+	str += "두 정수의 합 : " + hap + "<br>";
+	out.innerHTML = str;	//태그가 있던 없던 모두 innerHTML이 사용가능.
+	
+}
+
+function calc2(){
+	
+	//1.prompt만들기
+	input1 = parseInt(prompt("첫번째 정수 입력 > "));
+	input2 = parseInt(prompt("두번째 정수 입력 > "));
+	op = prompt("연산자 입력 > ","+,-,*,/");
+	
+	//2.비교 (비교대상 : op (더하기야 빼기야 뭐야?))
+	if(op == "+"){
+		res = input1 + input2;
+	}else if(op == "-"){
+		res = input1 - input2;
+	}else if(op == "/"){
+		res = input1/input2;
+	}else if(op == "*"){
+		res = input1*input2;
+	}	
+	
+	//3.id=d2에 출력하기
+	//3-1.id=d2검색하기
+	out=document.getElementById('d2');
+	
+	//3-2.출력 내용 만들기
+	str = "첫번째 정수 : " + input1 +"<br>";
+	str += "두번째 정수  : " + input2 + "<br>";
+	str += "연산자 : " + op + "<br>";
+
+// 	str += input1 + " " + op + " " + input2 + "=" + res + "<br>"; 이 내용은 아래와 같이 쓸 수 있다.
+	str += `${input1} ${op} ${input2} = ${res} <br>` 	
+	
+	
+	out.innerHTML=str;
+	
+}
+</script>
+
+</head>
+<body>
+
+<pre>
+prompt()함수를 이용하여 입력하고 입력한 값을 더해서 더한값을 출력한다.
+출력은 div id=d1 요소에 출력한다.
+</pre>	
+	<input type="button" value="확인" onclick="calc()"><br><br>
+	<div id = d1></div>
+
+  
+
+<pre>
+숫자 2개와 연산자 1개를 입력 받아 연산자에 맞는 계산결과를 출력하는 프로그램
+입력은 prompt를 이용하고,
+출력은 div에 출력한다.
+</pre>
+	<input type="button" value="확인" onclick="calc2()"><br><br>
+	<div id = d2></div>
+	
+<pre>
+str += input1 + " " + op + " " +input2 + "=" + res + "&lt;br>";
+
+위 내용을 템플릿 문자열로 바꾸기
+(잠깐! 템플릿 문자열이란 ? 백틱(`)을 이용한 문장 => 문자열과 변수를 간단히 표현.
+변수 표현 : ${변수})
+
+str += `${input1} ${op} ${input2} = ${res} &lt;br>` 
+</pre>
+	
+	
+	
+	
+</body>
+</html>
