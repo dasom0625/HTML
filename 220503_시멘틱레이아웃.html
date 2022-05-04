@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+	body{
+	min-width: 1200px;
+	}
+	header,footer,nav,section,article{
+	width : 100%;
+	box-sizing : border-box;
+	border-radius: 20px;
+	text-align: center;
+	margin-top : 5px;
+	margin-bottom : 5px;
+	
+	}	
+	
+	header{
+	background: yellow;
+	height: 200px;
+	}
+	#h{
+	font-size: 3.0em;
+	font-weight: bold;
+	
+	}
+	nav{
+	background: pink;
+	float: left;
+/* 	width : 30%; */
+	width: calc(30% - 1px);
+	height: 500px;
+	}
+	#n{
+	font-size: 2.0em;
+	font-weight: bold;
+	
+	}
+	section{
+	background: lightblue;
+/* 	width: 68%; */
+	width: calc(67% - 1px);
+	float : right;
+	height: 500px;
+	}
+	img{
+	z-index : 100;
+	width: 200px;
+	height: auto;
+	}
+	li{
+	margin : 10px;
+	text-align: left;
+	}
+	article{
+	border: 1px dotted green;
+	margin : 20px;
+	padding : 10px;
+	width : 95%;
+	height: 220px;
+	background: #b2ebf2;
+	}
+	.p1{
+	font-size: 1.5em;
+	font-weight: bold;
+	}
+	.p2{
+	text-align: left;
+	}
+	footer{
+	float : bottom;
+	clear : both;
+	background: #ce93d8;
+	height : 50px;
+	padding-top: 10px;
+	}
+a:link{
+	text-decoration: none;
+	color : yellow;
+	}
+	a:visited {
+	color: white;
+	}
+	a:hover{
+	background: blue;
+	text-decoration: underline;
+	}
+	a:active{
+	color: red;	
+	font-size: 1.5em;
+	}
+
+	</style>
+</head>
+<body>
+
+
+	<header>
+	<p id=h>My Blog Page</p>
+	<br>
+	시멘틱 태그로 만들어진 페이지입니다.
+	</header>
+ 
+ 	
+ 	<nav><p id=n>Links</p>
+ 	<br>
+		<ul>
+			<li><a href="http://www.w3schoos.com">w3schools</a></li>
+			<li><a href="http://www.naver.com">Naver</a></li>
+			<li><a href="http://www.daum.net">Daum</a></li>
+			<br>
+		</ul>
+		<figure>
+		<img id=tom src = "../images/톰과제리.jpg" alt="톰과제리.jpg"></div>
+		<br>
+		<figuresection>톰과제리</figuresection>
+		</figure>
+		</nav>
+		
+		
+	<section>
+		<article>
+		<p class=p1>Semantic tags</p>
+		<br>
+		<p class=p2>시멘틱 요소(Semantic elements)들은 브라우저에게 요소의 의미나 목적을 명확하게 알려주는 요소이다.</p>
+		</article>
+		
+		<article>
+		<p class=p1>div와 span</p>
+		<br>
+		<p class=p2>div은 'divide'의 약자로 페이지를 논리적인 섹션으로 분리하는데 사용되는 태그이다.</p>
+		</article>
+	</section>
+
+	<footer>Copyright (c)2019 DasomLee</footer>
+
+
+</body>
+</html>
