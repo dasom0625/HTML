@@ -1,0 +1,46 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>JSP:Java Server page</h1>
+	<%
+	//1. 한글 인코딩
+	request.setCharacterEncoding("UTF-8");
+	
+	//2. 
+	String userId = request.getParameter("user_id");
+	String userPW = request.getParameter("user_pw");
+	String userName = request.getParameter("user_name");
+	String userYear = request.getParameter("year");
+	String userMonth = request.getParameter("month");
+	String userDay = request.getParameter("day");
+	String Gender = request.getParameter("gender");
+	String Mail = request.getParameter("email");
+	String Phone = request.getParameter("user_phone");
+	String userClass = request.getParameter("check");
+	String Photo = request.getParameter("photo");
+	
+	%>
+	
+	<div>
+		아이디 : <%=userId %><br>
+		비밀번호 : <%=userPW %><br>
+		이름 : <%=userName %><br>
+		생년월일 : <%=userYear %><%=userMonth%><%=userDay%><br>
+		성별 : <%=Gender %><br>
+		이메일 : <%=Mail %><br>
+		핸드폰 : <%=Phone%><br>
+		현재 듣는 수업 : <%=userClass%><br>
+		증명사진 : <%=Photo%><br>
+		
+	</div>
+
+	
+	
+</body>
+</html>
