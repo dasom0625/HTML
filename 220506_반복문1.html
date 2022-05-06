@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="../css/public.css">
+<style>
+	#d3{
+	height: 500px;
+	overflow: auto;
+	}
+</style>
+	<script>
+		function sumPro(){
+// 			num = prompt("1부터 100까지의 합");
+			
+			sum = 0;
+			for(i = 1 ; i<=100; i++){
+				sum += i; 
+			}
+			
+		out = document.getElementById('d1');
+		
+		n1 = `1부터 100까지의 합 : ${sum} <br>`;
+	
+		out.innerHTML = n1;
+		
+		}
+		
+		
+		function sumPro2(){
+			num2 = parseInt(prompt("100이상의 수를 입력하세요","100이하의 수는 입력 할 수 없습니다."));
+			//비교
+			
+			if(num2 < 100){ alert("100이하의 수는 입력 할 수 없습니다."); return false; }
+			
+			sum2 = 0; 
+			for(i = 1; i<=num2 ; i++){
+				sum2 += i;
+			}
+			
+			//returnt : 함수를 종료하는것이다.
+			out2 = document.getElementById('d2');
+			
+			n2 = `입력한 값 : ${num2} <br>`;
+			n2 += `1부터 입력한 값까지의 합 : ${sum2} <br>`;
+			
+			out2.innerHTML = n2;
+		}
+		
+		function gugu(){
+			//비교하기		
+			str = "";
+			for(i = 2; i <= 9 ; i++){	//단
+				for(j = 1; j <= 9 ; j++){
+					multi = i*j;
+					str += `${i} * ${j} = ${multi} <br>`;					
+				}
+			}
+			//검색하기
+			out3 = document.getElementById('d3');
+			
+			out3.innerHTML = str;
+		}
+		
+
+		
+		
+	</script>
+</head>
+<body>
+<pre>
+1~100까지의 합을 구하는 프로그램을 작성하시오(for문 이용)
+</pre>
+
+<input type =button value = "결과" onclick="sumPro()">
+<br><br>
+<div id =d1></div>
+
+
+<pre>
+prompt를 이용하여 100이상의 수를 입력하고, 100이하의 수는 걸러낸다.
+1~입력받은 수까지의 합을 구하여라. 
+</pre>
+
+<input type = "button" value = "확인" onclick ="sumPro2()">
+<div id = d2></div>
+
+
+<pre>
+중첩 반목문을 사용하여 구구단을 프로그램을 작성하시오(for문 이용)
+</pre>
+
+<input type = "button" value = "확인" onclick ="gugu()">
+<div id = d3></div>
+
+
+
+
+
+</body>
+</html>
