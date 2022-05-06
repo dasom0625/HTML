@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href = "../css/public.css">
+
+<script>
+<!---------------------------문제1------------------------------------->
+function calc(){
+	//입력
+	num1 = window.parseInt(prompt("숫자 1 입력> "));
+	num2 = window.parseInt(prompt("숫자 2 입력> "));
+	
+	op = prompt("연산자 > ","+ ,- ,* ,/");
+	
+	//switch문에서 비교하여 계산하기.
+	switch(op){
+	case "+" : res = num1 + num2; break;
+	case "-" : res = num1 - num2; break;
+	case "*" : res = num1 * num2; break;
+	case "/" : res = num1 / num2; break;
+	
+	}
+	//출력하기
+	str = `첫번째 수 : ${num1} <br>`;
+	str += `두번째 수 : ${num2} <br>`;
+	str += `연산자 : ${op} <br>`;
+	
+	out = document.getElementById("d1");
+	
+	str+= `${num1} ${op} ${num2} = ${res} <br>`
+	out.innerHTML = str;
+	
+}
+<!---------------------------문제2------------------------------------->
+
+function calc2(){
+	//입력하기
+// 	su1 = parseInt(prompt("과목 점수"));
+// 	score = parseInt(su1/10)
+ 	score = parseInt(prompt("과목 점수"));
+	//비교하기
+	switch(score/10){
+	case 9 : res1 = "수"; break;
+	case 8 : res1 = "우"; break;
+	case 7  : res1 = "미"; break;
+	case 6  : res1 = "양"; break;
+	case 5  : res1 = "가"; break;
+	default : res1 = "가";break;
+	}
+	//검색하기
+	out = document.getElementById('d2');
+	//출력하기
+	str1 = `학점 : ${score} <br>`;
+	str1 += `결과 : ${res1} <br>`;
+	
+	
+	str1 += `${score} => ${res1} <br>`;
+	
+	out.innerHTML=str1;
+	
+}
+<!---------------------------문제3------------------------------------->
+
+function calc3(){
+	user1 =prompt("첫번째 순서입니다.","가위 바위 보 중 입력 >");
+	user2 =prompt("두번째 순서입니다.","가위 바위 보 중 입력 >");
+	
+	//비교
+	switch(user1){
+	case "가위" : if(user2 == "가위"){res3 = "비겼습니다.";
+	}else if(user2 == "바위"){res3="user2 승";
+	}else if(user2 == "보"){res3="user1승";}
+	break;
+	
+	case "바위" : if(user2 == "가위"){res3 = "user1승";
+	}else if(user2 == "바위"){res3="비겼습니다.";
+	}else if(user2 == "보"){res3="user2승";}
+	break;
+	
+	case "보" : if(user2 == "가위"){res3 = "user2승";
+	}else if(user2 == "바위"){res3="user1승";
+	}else if(user2 == "보"){res3="비겼습니다.";}
+	break;
+	}
+	//검색
+	out = document.getElementById('d3');
+	//출력
+	str3 = `첫번째 사람 : ${user1} <br>`;
+	str3 += `두번째 사람 : ${user2} <br>`; 
+	str3 += `결과 : ${res3} <br>`; 
+	
+	out.innerHTML=str3;
+}
+
+
+</script>
+
+</head>
+<body>
+
+<!---------------------------문제1------------------------------------->
+<pre>
+숫자 2개와 연산자1개를 입력받아 연산자에 맞는 계산결과를 출력하는 프로그램
+입력은 prompt,출력은 div이용
+</pre>
+
+  <input type="button" value="계산" onclick="calc();">
+  <div id = "d1"></div>
+
+<!---------------------------문제2------------------------------------->
+<pre>
+점수를 입력 = prompt()
+학점을 계산하여 출력 = div
+수 : 90-100
+우 : 80-89
+미 :	70-79 
+양 : 60-69
+가 : 0-59
+</pre>
+
+  <input type="button" value="계산" onclick="calc2();">
+  <div id = "d2"></div>
+	
+	
+<!---------------------------문제3------------------------------------->
+	
+<pre>
+두사람의 가위, 바위, 보를 입력 받아 승자를 출력하는 프로그램
+</pre>	
+
+  <input type="button" value="계산" onclick="calc3();">
+  <div id = "d3"></div>
+
+</body>
+</html>
