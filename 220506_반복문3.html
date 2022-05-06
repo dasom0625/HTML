@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href= "../css/public.css">
+<script>
+<!------------------------------- 문제1 ------------------------------------->
+function sum1(){
+	
+// 	//방법1-----------------------------------------------
+// 	num = 0;//초기화
+// 		for (i = 1; i <= 200; i += 2) {
+// 			num += i;
+// 		}
+
+// 	//방법2-----------------------------------------------	
+// 	num = 0;//초기화
+// 		for (i = 1; i <= 200; i++) {
+// 			if (i % 2 == 0) {
+// 				num += i;
+// 			}
+// 		}
+
+	//방법3-----------------------------------------------	
+	num = 0;//초기화
+		for (i = 1; i <= 200; i++) {
+			if (i % 2 == 1)
+				continue;//한줄이므로, 중괄호 생략 가능
+				num += i; //한줄이므로 else 생략가능
+		}
+	//검색
+	out = document.getElementById('d1');
+	//출력
+	out.innerHTML = "1~200까지의 짝수의 합 : " + num;
+
+	}
+	
+<!------------------------------- 문제2 ------------------------------------->
+function sum2(){
+
+	str2 = "";
+	sum2 = 0;
+	while(true){
+	user = parseInt(prompt("정수를 입력하시오"));
+	
+	if(user == 0) break;
+
+		sum2 += user;
+		str2 += `${user} +`
+			
+	}
+	//출력 
+	str2 += `= ${sum2}`;
+	out2 = document.getElementById('d2');
+	out2.innerHTML = str2;
+	
+}
+	
+<!------------------------------- 문제3 ------------------------------------->
+
+function sum3(){
+	str3 ="";
+	hap = 0;
+	
+	for(i = 1 ; i<=10 ; i++){
+		for(j = 1; j<=10; j++){
+			hap = i+j;
+			if(hap % 3 != 0) continue;
+			
+		str3 += `${i} + ${j} = ${hap} <br>`;  
+
+		}
+		str3 += `<br>`;
+	}
+		out3 = document.getElementById('d3');
+		out3.innerHTML = str3;
+	
+}
+	
+</script>
+
+
+</head>
+<body>
+<!------------------------------- 문제1 ------------------------------------->
+<pre>
+1부터 200까지의 짝수의 합을 구하는 프로그램을 작성하고, continue를 이용하라.
+</pre>
+<input type = button value="확인" onclick="sum1()">
+<div id = d1></div>
+
+<!------------------------------- 문제2 ------------------------------------->
+<pre>
+사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오.
+</pre>
+<input type = button value="확인" onclick="sum2()">
+<div id = d2></div>
+
+<!------------------------------- 문제3 ------------------------------------->
+<pre>
+다중 for문을 이용해서 1~ 10 까지 중   
+i와 k의 더한 합이 3의 배수일때만 출력 continue를 이용
+</pre>
+<input type = button value="확인" onclick="sum3()">
+<div id = d3></div>
+</body>
+</html>
