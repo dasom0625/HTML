@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<style>
+
+table{
+	border : 2px solid red;
+	
+}
+td{
+	border : 2px solid green;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	
+}
+tr:nth-child(1){A
+	background: yellow;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+td:nth-child(1){
+	background: yellow;
+	font-weight: bold;
+	font-size: 1.5em;
+}
+
+</style>
+
+<script>
+<!----------------------------------- 문제1 ---------------------------------------------------->
+function guguT(){
+	res = "<table border = '1'>";
+	
+	for(i = 1; i<=9; i++){
+		res += "<tr>"; //한 줄(단)
+		for(j = 1 ; j<=9 ; j++){
+			res += "<td>" + (i*j) + "</td>";		
+		}
+		res += "</tr>";
+	}
+	res += "</table>";
+		
+	out = document.getElementById("T1");
+	out.innerHTML = res;
+		
+	}
+<!----------------------------------- 문제2 ---------------------------------------------------->
+function guguPro(){
+	
+	str = "";
+	while(true){
+		//입력
+	dan = parseInt(prompt("단을 입력하세요","0을 입력하면 단입력이 종료됩니다."));
+		
+		//입력수가 0인지 비교
+	if(dan == 0 )break;
+		
+		
+		for(i = 1; i<=9 ; i++){
+			multi = dan*i;
+			str += `${dan} * ${i} = ${multi} <br>`;	
+		}
+		str+=`<br>`;
+		
+	}
+	//출력
+	out1 = document.getElementById("d1");
+	out1.innerHTML = str;
+	
+	
+}
+
+
+</script>
+</head>
+<body>
+<!----------------------------------- 문제1 ---------------------------------------------------->
+<pre>
+테이블과 중첩 반복문을 이용하여 구구단 표를 만들어보자.
+</pre>
+<input type = button value="확인" onclick="guguT()">
+<div id = T1></div>
+
+<!----------------------------------- 문제2 ---------------------------------------------------->
+<pre>
+수를 prompt를 이용하여 입력받고,
+입력한수의 구구단을 출력하라.
+반복적으로 수행하다가 0을 입력받으면, 종료하라. 
+
+</pre>
+<input type = button value="확인" onclick="guguPro()">
+<div id = d1></div>
+
+</body>
+</html>
