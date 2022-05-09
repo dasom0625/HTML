@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<script>
+
+<!--------------------------------- 함수문제1 --------------------------------------->
+function proc1(op){
+	//정수 입력한 값 가져오기
+	value1 = parseInt(document.getElementById('su1').value);
+	value2 = parseInt(document.getElementById('su2').value);
+	
+	//비교
+	switch(op){
+	case "+" : res = add();  break;
+	case "-" : res = minus();  break;
+	case "*" : res = multi();  break;
+	case "/" : res = divide();  break;
+	}
+	out = document.getElementById('d1');
+	out.innerHTML = `${value1} ${op} ${value2} = ${res} <br>`;
+}
+
+function add(){return value1 + value2;}
+function minus(){return value1 - value2;}
+function multi(){return value1 * value2;}
+function divide(){return value1 / value2;}
+
+<!--------------------------------- 함수문제2 --------------------------------------->
+function proc2(){
+	str = ""; //발생한 랜덤수를  담는 변수
+	
+	for(i = 1 ; i <=5; i++){
+		
+		rnd = parseInt((Math.random()*100)+1);
+		//math.random()은 0.0~1.0까지이다.
+		str += rnd + " ";
+	}
+	
+	//발생된 랜던값을 출력
+	out = document.getElementById('d2');
+	out.innerHTML =`${str} <br>`
+}
+</script>
+<style>
+input[type=button]{
+	width: 100px;
+	height: 40px;
+	padding : 5px 10px;
+	background: red;
+	color : white;
+	border-radius: 30px;
+	font-size : 1.5em;
+}
+</style>
+</head>
+<body>
+
+<!--------------------------------- 함수문제1 --------------------------------------->
+<pre>
+두개의 수를 입력하고 각각의 연산자 버튼을 클릭하면 
+결과를 div에 출력하고, 
+각각 연산자에따라 연산하는 함수를 작성한다.
+</pre>
+
+정수1 <input type="text" id="su1"><br>
+정수2 <input type="text" id="su2"><br>
+<br>
+<!-- proc()안에 매개변수주기 -->
+<div id = "d1"></div>
+<input type="button" value="+" onclick="proc1('+')">
+<input type="button" value="-" onclick="proc1('-')">
+<input type="button" value="*" onclick="proc1('*')">
+<input type="button" value="/" onclick="proc1('/')">
+<br><br>
+
+<!--------------------------------- 함수문제2 --------------------------------------->
+<pre>
+버튼을 클릭하면 proc2()함수를 호출하고,
+함수에서 1~100사이의 랜덤수를 5개 발생시켜 div에 출력한다.
+</pre>
+<div id = "d2"></div>
+<input type="button" value="확인" onclick="proc2()">
+<br><br>
+
+</body>
+</html>
