@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<script>
+array = new Array("사과", "바나나","사과","사과", "복숭아", "자두", "천혜향");
+arr = ["사과", "바나나", "복숭아", "자두","사과", "천혜향","사과"];
+<!--------------------------- 앞에서부터 찾기 -------------------------------->
+proc1 = () => {	//람다함수
+	//찾는 과일 입력받기
+	value = prompt("찾는 과일을 입력하세요");
+	
+	//찾는 과일의  위치를 찾아라
+	var idx = arr.indexOf(value); //만약, 찾는 과일이 없으면 -1이 출력된다.
+
+	res = "찾는 과일 : " + value + "<br>";		
+	
+	if(idx == -1){	//존재하지 않는 과일이면 -1이 나오므로 존재하지 않는다고 출력하기
+		res += "배열 요소에 존재하지 않는 과일입니다.";
+	}else{	//-1이 아니라는건 배열요소에 있다는거니까 어디에 있는지 출력하기
+		res += idx + "번째에 존재합니다.";
+	}
+	
+	//출력하기
+	document.getElementById('d1').innerHTML = res;
+}
+
+<!--------------------------- 역순으로 찾기 -------------------------------->
+
+proc2 = () => {
+	
+	value = prompt("찾는 과일을 입력하세요");
+	
+	//찾는 과일의 위치
+	var lastidx = arr.lastIndexOf(value);
+	
+	res = "찾는 과일 : " + value + "<br>";		
+	
+	if(lastidx == -1){	//존재하지 않는 과일이면 -1이 나오므로 존재하지 않는다고 출력하기
+		res += "배열 요소에 존재하지 않는 과일입니다.";
+	}else{	//-1이 아니라는건 배열요소에 있다는거니까 어디에 있는지 출력하기
+		res += lastidx + "번째에 존재합니다.";
+	}
+	
+	//출력하기
+	document.getElementById('d2').innerHTML = res;
+	
+}
+
+<!--------------------------- 동시에 다수 찾기 -------------------------------->
+
+proc3 = () => {
+
+	value = prompt("찾는 과일을 입력하세요");
+	
+	//찾는 과일의 위치
+	var idx = 0; //초기값 주기
+	count = ""; //idx값이 저장 될 변수
+	nothing = 0;
+	
+	while(true){
+		idx = arr.indexOf(value,idx);
+			if(idx == -1) break;//없을때 멈춰야 하므로 idx++전에 break해야 함. 
+			
+			count += idx + "번째 ";
+			
+			idx++;
+			nothing++;//과일이 존재하면 nothing이 증가된다. 그럼, 과일이 존재한다는 의미가 되어 아래 if문에서 위치와 index번호가 출력된다. 
+			
+	}
+		
+		res = "찾는 문자열 : " + value + "<br>";
+		
+		if(nothing > 0 ){
+		
+			res += "위치 : " + count + "에 있습니다." + "<br>";
+		
+		}else res += "찾는 과일이 없습니다.";
+		
+		document.getElementById('d3').innerHTML = res;
+}
+
+<!---------------------------------- push ------------------------------------------------>
+proc4 = () => {
+	res = "원래 배열 : " + arr + "<br>";
+	arr.push("파인애플","망고");
+	res+= "push후 배열 : " + arr + "<br>";
+	
+	document.getElementById('d4').innerHTML = res;
+}
+
+<!---------------------------------- pop ------------------------------------------------>
+proc5 = () => {
+	res = "원래 배열 : " + arr + "<br>";
+	aa = arr.pop();
+	res += "제거 항목 : " + aa + "<br>";
+	res += "pop 후의 배열 : " + arr + "<br>";
+	
+	document.getElementById('d5').innerHTML = res;
+}
+
+<!---------------------------------- slice ------------------------------------------------>
+proc6 = () => {
+	res = "원래 배열 : " + arr + "<br>";
+	arr2 = arr.slice(1, 5);
+	res += "slice 항목 : " + slice + "<br>";
+	res += "slice 후의 배열 : " + arr + "<br>";
+	
+	document.getElementById('d6').innerHTML = res;
+}
+
+<!---------------------------------- splice수정 ------------------------------------------------>
+proc7 = () => {
+	res = "원래 배열 : " + arr + "<br>";
+	arr.splice(2,1, "aaa","bbb","ccc");
+	
+	res += "splice 후의 배열 : " + arr + "<br>";
+	
+	document.getElementById('d7').innerHTML = res;
+}
+<!---------------------------------- splice삭제 ------------------------------------------------>
+proc8 = () => {
+	res = "원래 배열 : " + arr + "<br>";
+	arr.splice(3, 2);
+
+	res += "splice 후의 배열 : " + arr + "<br>";
+	
+	document.getElementById('d8').innerHTML = res;
+<!---------------------------------- slice삽입 ------------------------------------------------>
+proc9 = () => {
+	res = "원래 배열 : " + arr + "<br>";
+	arr.splice(1, 0, "xxx","yyy");
+	
+	res += "splice 후의 배열 : " + arr + "<br>";
+	
+	document.getElementById('d9').innerHTML = res;
+}
+}
+
+</script>
+
+</head>
+<body>
+
+
+<!---------------------------------- indexOf,lastIndexOf ------------------------------------------------>
+
+<pre>
+1. indexOf 						: 앞에서부터 배열 요소 위치 찾기
+2. lastIndexOf 					: 뒤에서부터 배열 요소 위치 찾기
+3. indexOf(찾으려는 값, 배열의 위치)    : 다수의 같은 값을 찾기 
+</pre>
+<input type="button" value="IndexOf" onclick="proc1()">
+<input type="button" value="LastIndexOf" onclick="proc2()">
+<input type="button" value="동시에찾기" onclick="proc3()">
+<br><br>
+<p>indexOf
+<div id = "d1"></div>
+<p>lastIndexOf
+<div id = "d2"></div>
+<p>indexOf(찾으려는 값, 배열의 위치)
+<div id = "d3"></div>
+
+<!---------------------------------- push, pop ------------------------------------------------>
+
+<pre>
+push(a,b,c,...) : 배열에 끝에 추가
+pop(a,b,....) : 배열의 끝에서부터 제거 후 리턴
+</pre>
+<input type="button" value="push" onclick="proc4()">
+<input type="button" value="pop" onclick="proc5()">
+
+<p>push
+<div id = "d4"></div>
+<p>pop
+<div id = "d5"></div>
+
+<!---------------------------------- slice, splice ------------------------------------------------>
+<pre>
+slice(start, end) : start~ end-1 까지 요소 추출(잘라낸다)하여 리턴한다.
+splice(index, n, a,b,c)
+=> splice(2, 1, a,b,c,) : 2번째 인덱스에서 1개를 지우고, a,b,c요소를 삽입한다.
+=> splice(3, 2) : 3번째 인덱스에서 2개를 삭제한다.
+=> splice(4, 0, a,b,c) : 4번째 인덱스에서 a,b,c요소를 삽입한다.
+</pre>
+<input type="button" value="slice" onclick="proc6()">
+<input type="button" value="splice수정" onclick="proc7()">
+<input type="button" value="splice삭제" onclick="proc8()">
+<input type="button" value="splice삽입" onclick="proc9()">
+
+<div id = "d6"></div>
+<div id = "d7"></div>
+<div id = "d8"></div>
+<div id = "d9"></div>
+</body>
+</html>
