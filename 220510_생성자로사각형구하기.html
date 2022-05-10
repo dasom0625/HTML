@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<script>
+//1. 생성자 형태의 전역 객체 정의
+function Rect(width, height){	//생성자 정의 함수 이기떄문에 Rect(첫글자 대문자)로.. 
+	
+	//2. 속성
+	this.width = width;
+	this.height = height;
+
+	//3. 메소드
+	this.calcArea= function(){	//넓이구하기
+		return this.width * this.height;	
+	}
+	
+	this.calcCircum = function(){	//둘레구하기
+		return (this.width + this.height)*2;
+	}
+}
+
+function proc1(){
+	//4. Rect객체 정보 출력 -> 생성자 정의 함수 를 이용하여 객체를 생성
+	//4-1.방법 1
+	var rect = new Rect(12,34);//function Rect(width, height)부분
+	//4-2.방법2
+	var rect = new Rect(parseInt(prompt("정수1")),parseInt(prompt("정수2")));//function Rect(width, height)부분
+	
+	//6. 추가
+	rect.name = "네모";
+	
+	//5. 출력하기
+	res = "이름 : "+rect.name + "<br>";//6.추가된 내용
+	res += "가로 : " + rect.width + "<br>";
+	res += "세로 : " + rect.height + "<br>";
+	res += "넓이 : " + rect.calcArea() + "<br>";
+	res += "둘레 : " + rect.calcCircum() + "<br>";
+	
+	document.getElementById('d1').innerHTML = res;
+	
+	
+}
+</script>
+
+</head>
+<body>
+
+
+
+<pre>
+생성자 정의 함수를 이용하여 객체 생성 후 사각형의 넓이과 둘레구하기
+</pre>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id = "d1"></div>
+
+</body>
+</html>
