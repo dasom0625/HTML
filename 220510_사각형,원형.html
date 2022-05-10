@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+
+<script>
+<!------------------------------------------ rect객체 전역변수 --------------------------------------------------->
+
+//function proc1()안에서 var없이 선언해도 전역변수이지만, 그때는 반드시 선언한곳에서도 사용해야만 다른곳에서도 사용이 가능하다.
+//function에서 선언하지 않고 그 위에 선언하게 되면 전역변수가 되면서 어디서든 항상 사용 가능하다. 
+rect = {
+		
+	width : 12,		//key : value 
+	height : 8, 	//key : value 
+	
+	calcArea : function(){		//넓이 구하기			
+	return this.width * this.height; 
+	},	
+		
+	calcCircum : function(){	//둘레구하기
+	return (this.width + this.height)*2;
+
+	}	
+} 
+
+<!---------------------------------------------- proc1() --------------------------------------------------->
+
+function proc1(){
+	rect.name = "사각형";	//이렇게 동적인 방법으로 rect객체속에 이름 추가가능.
+
+	print('d1');
+}
+
+<!---------------------------------------------- print() --------------------------------------------------->
+
+function print(ele){
+
+	//rect정보를 출력
+	res = "사각형 정보 <br><br>";
+	
+	if(typeof rect.name == "undefined"){	//undefined는 자료형타입이기 때문에 typeof를 이용하여 undefined인지 아닌지 비교 할 수 있다.
+		res += "이름 : 없음" + "<br>"
+	}else res += "이름 : " + rect.name+"<br>";
+	
+	res += "가로 : "+ rect.width + "<br>" + "세로 : " + rect.height + "<br>";
+	res += "사각형 넓이 : " + rect.calcArea() + "<br>";
+	res += "사각형 둘레 : " + rect.calcCircum() + "<br>";
+	
+	out = document.getElementById(ele);
+	out.innerHTML = res;
+}
+
+<!---------------------------------------------- proc2() --------------------------------------------------->
+
+function proc2(){
+	//입력
+// 	rect.name = "prompt사각형";
+	n1 = parseInt(prompt("정수1"));
+	n2 = parseInt(prompt("정수2"));
+	
+	//대입시키기
+	rect.width = n1;
+	rect.height = n2;
+	
+	print('d2');
+	
+}
+
+<!---------------------------------------------- proc3() --------------------------------------------------->
+	//1. 객체 선언 => 속성과 메소드를 정의하지 않음.(속성과 메소드는 동적으로 추가가능)
+circle = { }
+function proc3(){
+	//2. 속성과 메소드를 동적으로 추가하기
+	circle.rad = 3;//2-1.원형의 반지름
+	circle.calcArea = function(){	//2-2.원형 넓이
+		return this.rad * this.rad * Math.PI;
+	}
+
+	circle.calcCircum = function(){	//2-3.원형 둘레
+		return 2*Math.PI*this.rad;
+	}
+	//3. 출력
+	str = "원형의 반지름 : " + circle.rad + "<br>";
+	str += "원형 넓이 : " + circle.calcArea().toFixed(2) + "<br>";
+	str += "원형 둘레 : " + circle.calcCircum().toFixed(2) + "<br>";
+	//toFixed(2)=>소수점 두자리까지 만들어라	
+	document.getElementById('d3').innerHTML = str;
+}
+
+</script>
+
+</head>
+<body>
+
+
+
+<!---------------------------------------------- proc1() --------------------------------------------------->
+<pre>
+1.객체란? : 
+	속성과 메소드  묶어서 표현.
+	생성자없이 리터럴로 생성하는 방법
+
+문제 1. rect객체 생성
+	속성 		  : Width, height , color, border, name...
+	메소드(동작) : 면적구하기, 둘레구하기, color색 지정하기, color값 가져오기, border지정하기, border값 가져오기
+				name지정하기, name가져오기..
+</pre>
+<p>name 속성을 rect객체에 정의하지 않고 동적으로 추가해서 사용 가능.</p>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id = "d1"></div>
+
+<!---------------------------------------------- proc2() --------------------------------------------------->
+<pre>
+문제2. 가로, 세로를 입력하여 정보를 출력한다.
+</pre>
+<input type="button" value="확인" onclick="proc2()">
+<br><br>
+<div id = "d2"></div>
+
+<!---------------------------------------------- proc3() --------------------------------------------------->
+<pre>
+문제3. circle객체 생성
+속성과 메소드를 동적으로 추가한다.
+circle = { }
+</pre>
+<input type="button" value="확인" onclick="proc3()">
+<br><br>
+<div id = "d3"></div>
+
+</body>
+</html>
