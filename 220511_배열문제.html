@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<script>
+<!---------------------------- 문제1 --------------------------------------->
+
+function proc1(){
+	arr = new Array();//배열 선언
+	
+	while(true){
+		
+		//입력
+		input = prompt("이름을 입력하세요");
+	
+		//입력비교 - break비교
+		if(input == null || input == " ") break;
+			
+		//배열에 push하여 저장
+		arr.push(input);//null이나 ""이 아니면 push
+		
+	}//while문 종료..
+	
+	//배열 출력
+	document.getElementById('d1').innerHTML = arr;	
+}
+
+<!---------------------------- 문제2 --------------------------------------->
+
+function proc2(){
+	
+	arr = new Array();
+	
+	while(arr.length <=5 ){
+		
+		input = parseInt(prompt("정수 입력"));
+		
+		//배열 요소 비교(있는지 없는지)
+		idx = arr.indexOf(input);
+		if(idx == -1) arr.push(input);
+		
+	}
+	document.getElementById('d2').innerHTML = arr;
+}
+</script>
+
+</head>
+<body>
+
+<!---------------------------- 문제1 --------------------------------------->
+<pre>
+사람 이름을 계속 입력 받아 배열에 저장하고 그 저장된 이름을 출력하는 프로그램을 작성하시오.
+(단, 입력은 prompt 명령을 이용하고, 입력의 마지막은 공백문자를 입력하거나 "취소" 버튼을 눌렀을 때로 한다. 
+"취소" 버튼은 null 이 입력될 때이다.)
+</pre>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id = "d1"></div>
+
+<!---------------------------- 문제2 --------------------------------------->
+<pre>
+서로 중복되지 않은 정수 5개를 입력 받아 출력하는 프로그램을 작성하시오.  Js_array객체
+</pre>
+<input type="button" value="확인" onclick="proc2()">
+<br><br>
+<div id = "d2"></div>
+
+</body>
+</html>
