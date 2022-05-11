@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<script>
+
+str = "I LOVE KOREA 대한 민국 만세 korea 화이팅";
+
+<!--------------------------- charAt------------------------------------>
+function proc1(){
+	
+	chr = str.charAt(5);//str.indexOf('e')와같다
+	alert(chr);
+}
+
+<!--------------------------- charCodeAt------------------------------------>
+function proc2(){
+	
+	chr = str.charCodeAt(5);
+	alert(chr);
+}
+
+<!--------------------------- substring------------------------------------>
+function proc3(){
+	
+	chr = str.substring(2, 6);
+	alert("sur.sbustirng(2,6) : " + chr);
+	
+}
+<!--------------------------- slice------------------------------------>
+function proc4(){
+	
+	chr = str.slice(2, 6);
+	alert("str.slice(2,6) : " + chr);
+	
+}
+<!--------------------------- substr ------------------------------------>
+function proc5(){
+	
+	chr = str.substr(2, 6);
+	alert("str.substr(2,6) : " + chr);
+	
+}
+
+<!--------------------------- split ------------------------------------>
+function proc6(){
+	
+	chr = str.split(" ",3); //공백을 기준으로 3글자 나오게 하라
+	chrall = str.split(" "); //공백을 기준으로 모두 나오게 하라
+	alert("str.split(' ',3) : " + chr + " / str.split(' ') : " + chrall);
+	
+}
+
+<!--------------------------- replace ------------------------------------>
+function proc7(){
+	
+	chr = str.replace(/\s/g, "<br>"); //단어들은 한줄씩 내려오게 하라
+ 	alert("div를 확인하세요");
+	
+	document.getElementById('d7').innerHTML = chr;
+}
+
+<!--------------------------- trim ------------------------------------>
+function proc8(){
+		
+	nvalue = document.getElementById('name').value;
+	//1.공백 거르기
+ 	ntr = nvalue.trim();
+	if(ntr.length < 1){
+		alert("이름을 입력하세요");
+		return false;//proc8()을 종료하라 라는 의미,이게 없으면 이름 입력안해도 바로 밑의 alert까지 나와버림.
+	}
+	
+	//2.길이를 체크
+	if(ntr.length<2 || ntr.length >5){
+		alert("이름의 길이는 2~5입니다. 다시 입력해주세요");
+		return false;
+	}
+	alert("정상적으로 입력되었습니다.");
+}
+
+
+</script>
+
+</head>
+<body>
+
+
+
+<!--------------------------- charAt / charAtCode------------------------------------>
+<pre>
+str = "I love Korea 대한민국 만세 Korea 화이팅";
+</pre>
+<input type="button" value="charAt" onclick="proc1()">
+<input type="button" value="charAtCode" onclick="proc2()">
+<br><br>
+<div id = "d1"></div>
+<div id = "d2"></div>
+
+<!--------------------------- substring/ slice / substr------------------------------------>
+<pre>
+str = "I love korea 대한민국 만세 korea 화이팅";
+
+substirng (start,end)
+slice(start,end)
+substr(start,length)
+</pre>
+<input type="button" value="substring" onclick="proc3()">
+<input type="button" value="slice" onclick="proc4()">
+<input type="button" value="substr" onclick="proc5()">
+<br><br>
+<div id = "d3"></div>
+<div id = "d4"></div>
+<div id = "d5"></div>
+
+<!--------------------------- split / replace ------------------------------------>
+<pre>
+str = "I love korea 대한민국 만세 korea 화이팅";
+
+split(구분자, 갯수) : 
+구분자(공백)로 구분하여 문자열을 분리하고 이를 배열로 리턴한다.
+갯수 : 최대 몇개를 리턴한다. 
+
+</pre>
+<input type="button" value="split" onclick="proc6()">
+<input type="button" value="replace" onclick="proc7()">
+<br><br>
+<div id = "d6"></div>
+<div id = "d7"></div>
+
+<!--------------------------- trim ------------------------------------>
+<pre>
+str = "I love korea 대한민국 만세 korea 화이팅";
+
+trim() : 앞뒤의 공백 제거
+</pre>
+이름입력 <input type="text" id="name" ><br><br>
+<input type="button" value="trim" onclick="proc8()">
+<div id = "d8"></div>
+</body>
+</html>
