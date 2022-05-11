@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+<script>
+<!------------------------- Date객체 ------------------------------->
+
+	today1 = new Date();//전역변수로 선언
+
+function proc1(){
+	//Date객체 생성
+	today2 = new Date(100000);//지난 시간 표시 (밀리세터로 계산해서 지금으로부터 몇 초 전인지 계산(100000/1000 =100초))
+	today3 = new Date("2022.5.11.09:34"); //년.월.일.시.분
+	today4 = new Date(2022,4,11,9,34);//★년, 월(0월부터 시작하므로 -1월계산해서 해야함. ex 5월이면 4로적어야 함.), 일, 시, 분
+
+	today1 = today1.toLocaleString();
+	today2 = today2.toLocaleString();
+	today3 = today3.toLocaleString();
+	today4 = today4.toLocaleString();
+	
+	res = today1 + "<br>" + today2 + "<br>" + today3 + "<br>" +today4 + "<br>";
+	document.getElementById('d1').innerHTML = res;
+	
+}
+<!------------------------- getDay객체 ------------------------------->
+function proc2(){
+
+	day = today1.getDay();
+	
+	switch(day){
+	case 0 : str = "일"; break;
+	case 1 : str = "월"; break;
+	case 2 : str = "화"; break;
+	case 3 : str = "수"; break;
+	case 4 : str = "목"; break;
+	case 5 : str = "금"; break;
+	case 6 : str = "토"; break;
+	}
+	res = "오늘은 " + today1.toLocaleString() + "<br>";
+	res += str + "요일 입니다.";
+	document.getElementById('d2').innerHTML = res;
+	
+}
+<!------------------------- getDay객체 ------------------------------->
+function proc3(){
+	//배열에 요일 담기
+	arr=["일요일", "월요일", "화요일", "수요일","목요일", "금요일", "토요일"];
+
+	window.setInterval(() => {
+		today = new Date();//1초마다 계속 시간을 바꿔줘야해서 newDate새로 생성
+		
+		day = [today.getDay()];
+		
+		res = "오늘은 " + today.toLocaleString() + "<br>";
+		res += day + "입니다.";
+		
+	document.getElementById('d3').innerHTML = res;
+	
+	}, 1000);
+}
+</script>
+
+</head>
+<body>
+<!------------------------- Date객체 ------------------------------->
+<pre>
+1)today1 = new Date();
+
+2)today2 = new Date(100000);
+=> 지난 시간 표시 (밀리세터로 계산해서 지금으로부터 몇 초 전인지 계산(100000/1000 =100초))
+
+3)today3 = new Date("2022.5.11.09:34");
+=> 년.월.일.시.분
+
+4)today4 = new Date(2022,4,11,9,34);
+=> ★년, 월(0월부터 시작하므로 -1월계산해서 해야함. ex 5월이면 4로적어야 함.), 일, 시, 분
+</pre>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id = "d1"></div>
+
+<!------------------------- 요일구하기 ------------------------------->
+
+<pre>
+1)요일구하기
+getDay() : 0~6일(일~토)
+</pre>
+<input type="button" value="확인" onclick="proc2()">
+<br><br>
+<div id = "d2"></div>
+
+<!------------------------- 배열을 이용한 요일구하기 ------------------------------->
+
+<pre>
+1)배열을 이용한 요일구하기
+getDay() : 0~6일(일~토)
+배열을 이용  : arr=["일요일", "월요일", "화요일", "수요일","목요일", "금요일", "토요일"];
+</pre>
+<input type="button" value="확인" onclick="proc3()">
+<br><br>
+<div id = "d3"></div>
+
+</body>
+</html>
