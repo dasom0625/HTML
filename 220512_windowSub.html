@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<script>
+function proc1(){
+	
+	res = "protocol = " +location.protocol + "<br>";
+	res += "host= " + location.host + "<br>";
+	res += "hostname = " + location.hostname + "<br>";
+	res += "port = " + location.port + "<br>";	//port넘버는 80인데 보여지지는 않음
+	res += "pathname = " + location.pathname + "<br>";
+	res += "href = " + location.href + "<br>";
+	
+	document.getElementById('d1').innerHTML = res;
+}
+
+function proc2(){
+	
+	location.href = "http://localhost/webpro/0511/Array.html";
+	
+// 	document.getElementById('d2').innerHTML = res;
+}
+
+function proc3(){
+	
+	location.href = "http://localhost/webpro/0511/Array.html";
+}
+</script>
+
+</head>
+<body>
+
+
+
+<pre>
+href
+protocol
+hostname
+host
+port
+pathname
+</pre>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id = "d1"></div>
+
+<pre>
+href는 
+- 버튼을 클릭시 특정 페이지 이동한다.
+- a태그를 이용해서 특정 페이지로 이동한다.
+- a태그를 이용해서 자바스크립트의 함수를 호출해서 특정 페이지로 이동한다.
+- get방식으로 특정페이지로 이동한다.
+</pre>
+<input type="button" value="확인" onclick="proc2()">
+<input type="button" value="onclick으로 이동" onclick="location.href = 'windowOpen.html'">
+
+<br><br>
+<a href = "javascript:proc3()">a 태그를 이용한 javascript상에서 이동</a>
+<a href = "#" onclick = "proc3()">a태그의 onclick을 이용하여 이동</a>
+<br><br>
+
+<input type="button" value="확인" onclick="location.href = 'test.jsp?name=korea&&id=a001'">
+<!-- //onclik에 공백있으면안됨 -->
+
+<div id = "d2"></div>
+
+</body>
+</html>
