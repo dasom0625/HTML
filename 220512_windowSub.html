@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<script>
+function proc1(){
+	ran = parseInt(Math.random() * 10 + 1);
+	
+	//부모창의 div id = d1인 요소에 출력
+	opener.document.getElementById('d1').innerHTML = ran;
+	
+	window.close();//현재 창(windowSub.html)이 닫힘.
+	//실행은 부모창(windowOpen.html)에서 실행해야 된다.
+	
+}
+</script>
+
+</head>
+<body>
+
+
+
+<pre>
+이곳은 windowOpen.html에 있는 window.open()에 의해서 열린 자식창이다.
+자식창에서 처리한 결과를 부모창으로 보낼 때
+opener 속성을 이용한다.
+</pre>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id = "d1"></div>
+
+</body>
+</html>
