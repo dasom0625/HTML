@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<script>
+function proc1(){
+	
+// 	a = window.open("http://www.naver.com", "_blank", "width = 300 height = 400");
+// 	window.open("URL주소", "설정할이름(논리적인것으로 실제로 보여지지 않음) 또는 _self EHsms _blank", "스펙");
+// 	a.resizeTo(100,500);//사이즈 가로세로
+// 	window.open(); //아무것도 없는 창이 나옴
+
+	a= window.open("windowSub.html","서브윈도우", "width = 400  height = 500");
+
+	a.moveTo(500,500); //창이 열리는 위치
+}
+</script>
+
+</head>
+<body>
+
+
+
+<pre>
+부모창
+</pre>
+<input type="button" value="확인" onclick="proc1()">
+<br><br>
+<div id = "d1"></div>
+
+</body>
+</html>
