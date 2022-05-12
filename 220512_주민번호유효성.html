@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+<script>
+
+function proc2(){
+	str ="234567892345";//곱할변수(주민번호의 마지막 번호 제외하고니까 12개만 적음)
+	hap = 0;//더할 변수
+	
+	//입력-ABCDEF-GHIJKLM
+	input = window.prompt("주민번호를 입력하세요","ABCDEF-GHIJKLM");
+	
+	//'-'제거하기
+	input= input.replace("-", "");//"-"을 공백없는걸로 변환
+	
+// 	A*2 + B*3 + ... + H*9 + I*2 + ... + L*5 의 총합을 구한다.
+	for(i = 0 ; i <input.length-1 ; i++){	//length는 13이고, index는 12이지만, 우리는 마지막 숫자는 제외하고 할거라 -1
+		hap += str.substr(i,1) * input.substr(i,1);
+	}
+
+// 	1번의 합을 11로 나눈 나머지를 구한다.
+// 	11에서 2번의 결과를 뺀다.
+	a = 11 - hap % 11;	
+
+// 	3번의 결과가 0~9이면 값 그대로, 10이면 0, 11이면 1로 변환
+	if(a == 10) a = 0;
+	if (a == 11) a = 1;
+	
+// 	4번의 결과와 M자리의 값이 같으면 맞는 번호이다.	
+	if(a == input.substr(12,1)) {
+		alert("올바른 주민번호입니다."); 
+	} else {
+		alert("잘못된 주민번호입니다."); 
+	}
+}
+</script>
+
+</head>
+<body>
+
+<pre>
+주민등록번호를 입력 받아 주민등록번호의 유효성을 검사하는 프로그램을 작성하시오.(ABCDEF-GHIJKLM)
+A*2 + B*3 + ... + H*9 + I*2 + ... + L*5 의 총합을 구한다.
+1번의 합을 11로 나눈 나머지를 구한다.
+11에서 2번의 결과를 뺀다.
+3번의 결과가 0~9이면 값 그대로, 10이면 0, 11이면 1로 변환
+4번의 결과와 M자리의 값이 같으면 맞는 번호이다.
+
+</pre>
+<input type="button" value="확인" onclick="proc2()">
+<br><br>
+<div id = "d2"></div>
+
+</body>
+</html>
