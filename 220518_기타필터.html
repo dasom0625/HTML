@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href = "../css/public.css">
+<link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+<script src = "../js/jquery-3.6.0.min.js"></script>
+
+<script>
+	$(function(){
+			str = "";
+
+			$('#btnvisi').on('click',function(){
+			//방법1
+// 			str += $('#d1 p:visible').text();
+// 			$('.visi').text(str);
+			
+			//text대신에 html을 사용하면, 한 문장만 가지고오기떄문에 아래와 같이 반복문을 써야함.
+			//방법2
+			$('#d1 p:visible').each(function(){
+				str += $(this).html() + "<br>";
+			})
+			$('.visi').html(str);
+			
+		})
+		
+		
+		$('#btnhid').on('click',function(){
+			str = "";
+			str += $('#d1 p:hidden').text();
+			$('.hid').text(str);
+			
+		})
+//////////////////////////////////////////////////////////////////////		
+		$('#visib').on('click',function(){
+			//testForm안의 visible만 걸러내기
+			
+			//if문에 사용할 변수들 초기화선언.		
+			var vattr = "";
+			var textval = "";
+			var text= "";
+			$('#testForm *:visible').each(function(){
+// 				alert(this.tagName);	//태그이름 알아오기(DOM에에서 알아옴)=>모두 대문자로 나온다.
+				
+				if(this.tagName=="INPUT"){
+					
+					vtype = $(this).attr('type');//input일때 타입이 라디오냐 버튼이냐  등등 타입 비교하는거(성별 클릭한것만 나오게 하기 위해..)
+					
+					if(vtype == "radio"){ //input type이 radio일때 
+						if($(this).prop('checked')){
+							vattr += this.tagName + "Visible 객체 [" + 
+								$(this).attr('name') + " : " + 
+								$(this).val() + "]<br>";//this.val 은 남자냐 여자냐 의 값을 가져옴
+						}//라디오가 체크된 상태인지 if문 종료
+					}else{//input type 이 text일때...
+					
+					vattr += this.tagName + "Visible 객체 [" + 
+							$(this).attr('name') + " : " + 
+							$(this).val() + "]<br>";
+
+					}//input타입이 라디오냐 아니냐 if문 종료
+
+				}else if(this.tagName!="BR"){
+					text += this.tagName + " : " + $(this).text() + "<br>";
+				}
+				
+			})
+
+			//출력
+			res = vattr;
+			res += text;
+			$('.visi2').html(res);
+		})
+/////////////////////////////////////////////////////////////////////////////		
+		
+		$('#hidb').on('click',function(){
+			//지역변수 선언
+			var vattr = "";
+			var text = "";
+			
+			$('#testForm *:hidden').each(function(){
+				
+	// 			alert(this.tagName);
+				if(this.tagName == "INPUT"){//tagName비교
+					
+					vattr += this.tagName + "Hidden 객체["+
+						$(this).attr('name') + " : " +
+						$(this).val() + "]<br>";
+						
+				}else{//tagName이 아니면...
+					text += this.tagName + " : " + $(this).text() + "<br>";
+					
+				}
+			})
+			//출력
+			
+			res = vattr;
+			res += text;
+			$('.hid2').html(res);
+		})//클릭이벤트 종료 
+		
+	})
+</script>
+
+</head>
+<body>
+
+<pre></pre>
+<input type="button" value="visible" id='btnvisi'>
+<input type="button" value="hidden" id='btnhid'>
+<br><br>
+<div id = "d1">
+  
+  <p> 보이는 문단</p>
+  <p style="visibility:hidden;">숨겨진 문단</p>
+  <p style="display:none;"> 자리를 차지 하지 못한 문단 </p>
+  <p style="opacity:0;"> 투명한 문단</p>
+
+</div>
+<div class="visi"></div>
+
+<div class="hid"></div>
+
+
+<pre>
+1. 속성값 가져오기(속성의 값이 무엇이냐)
+> attr('name'), attr('type'), attr('id'), attr('class')
+
+2. 값을 가져오기
+> input태그는  var()
+> input이 아닌 태그는  span, div, p, td등 은 text(), html()로 가져옴.
+
+3. 속성의 상태값 가져오기
+> true/false를 리턴
+> prop(prompt의 약자)
+>>prop('checked') => 체크되어있으면 true/ 체크 안되어있으면 false를 리턴 =>if문에서 사용
+>>prop('selected') => 선택되어있으면 true / 선택 안되어있으면 false를 리턴
+>>prop('disabled') => 
+>>prop('multiple') 
+>>prop('readonly') 
+
+</pre>
+
+<input type="button" value="visible" id='visib'>
+<input type="button" value="hidden" id='hidb'>
+<br><br>
+
+<div id = d2>
+
+	<form id="testForm"> 
+		<input type="hidden" name="userAge" value="33">
+		<input type="hidden" name="userCity" value="대전">
+		
+		ID : <input type="text" name="userID" value="hong">  
+		<span style="display:none">ID가 중복됩니다. </span> <br>  
+		
+		이름 : <input type="text" name="userName" value="홍길동">   
+		<span style="visibility:hidden">이름을 입력하세요</span><br>  
+		
+		성별 : <input type="radio" name="sung" value="남" checked>남자  
+		<input type="radio" name="sung" value="여">여자  
+	</form>
+
+<div class = "visi2"></div>
+<div class = "hid2"></div>
+
+</div>
+
+</body>
+</html>
